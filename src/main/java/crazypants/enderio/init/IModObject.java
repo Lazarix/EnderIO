@@ -3,8 +3,6 @@ package crazypants.enderio.init;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-import com.enderio.core.common.util.stackable.IProducer;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -13,63 +11,85 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
-public interface IModObject extends IProducer {
+public interface IModObject
+    {
 
-  @Nonnull
-  String getUnlocalisedName();
+    // Since it was removed from endercore, I have added this
+    default @Nullable
+    Block getBlock()
+        {
+        return null;
+        }
 
-  @Nonnull
-  ResourceLocation getRegistryName();
 
-  @Nonnull
-  <B extends Block> B apply(@Nonnull B block);
+    default @Nullable
+    Item getItem()
+        {
+        return null;
+        }
 
-  @Nonnull
-  <I extends Item> I apply(@Nonnull I item);
-
-  public static interface Registerable extends IModObject {
 
     @Nonnull
-    Class<?> getClazz();
+    String getUnlocalisedName();
 
-    @Nullable
-    String getBlockMethodName();
+    @Nonnull
+    ResourceLocation getRegistryName();
 
-    @Nullable
-    String getItemMethodName();
+    @Nonnull
+    <B extends Block> B apply(@Nonnull B block);
 
-    @Nullable
-    Class<? extends TileEntity> getTileClass();
+    @Nonnull
+    <I extends Item> I apply(@Nonnull I item);
 
-    void setItem(@Nullable Item obj);
+    public static interface Registerable extends IModObject
+        {
 
-    void setBlock(@Nullable Block obj);
+        @Nonnull
+        Class<?> getClazz();
 
-  }
+        @Nullable
+        String getBlockMethodName();
 
-  /**
-   * Interface to be implemented on blocks that are created from modObjects. It will be called at the right time to create and register the blockItem. Note that
-   * the method shall NOT do the registering itself.
-   *
-   */
-  public static interface WithBlockItem {
+        @Nullable
+        String getItemMethodName();
 
-    default Item createBlockItem(@Nonnull IModObject modObject) {
-      return modObject.apply(new ItemBlock((Block) this));
-    };
+        @Nullable
+        Class<? extends TileEntity> getTileClass();
 
-  }
+        void setItem(@Nullable Item obj);
 
-  public static interface LifecycleInit {
+        void setBlock(@Nullable Block obj);
 
-    void init(@Nonnull IModObject modObject, @Nonnull FMLInitializationEvent event);
+        }
 
-  }
+    /**
+     * Interface to be implemented on blocks that are created from modObjects. It will be called at the right time to create and register the blockItem. Note that
+     * the method shall NOT do the registering itself.
+     */
+    public static interface WithBlockItem
+        {
 
-  public static interface LifecyclePostInit {
+        default Item createBlockItem(@Nonnull IModObject modObject)
+            {
+            return modObject.apply(new ItemBlock((Block) this));
+            }
 
-    void init(@Nonnull IModObject modObject, @Nonnull FMLPostInitializationEvent event);
+        ;
 
-  }
+        }
 
-}
+    public static interface LifecycleInit
+        {
+
+        void init(@Nonnull IModObject modObject, @Nonnull FMLInitializationEvent event);
+
+        }
+
+    public static interface LifecyclePostInit
+        {
+
+        void init(@Nonnull IModObject modObject, @Nonnull FMLPostInitializationEvent event);
+
+        }
+
+    }
