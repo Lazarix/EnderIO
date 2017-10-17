@@ -1,7 +1,7 @@
 package crazypants.enderio.filter.recipes;
 
+import com.enderio.core.common.util.NNList;
 import crazypants.enderio.EnderIO;
-import crazypants.enderio.conduit.item.FilterRegister;
 import crazypants.enderio.filter.FilterRegistry;
 import crazypants.enderio.filter.IItemFilterUpgrade;
 import net.minecraft.inventory.InventoryCrafting;
@@ -37,7 +37,7 @@ public class ClearFilterRecipe implements IRecipe{
     
     if (count == 1 && FilterRegistry.isFilterSet(input)) {
       ItemStack out = input.copy();
-      out.stackSize = 1;
+      out.setCount(1);
       out.setTagCompound(null);
       this.output = out;
     } else {
@@ -70,8 +70,8 @@ public class ClearFilterRecipe implements IRecipe{
   }
   
   @Override
-  public ItemStack[] getRemainingItems(InventoryCrafting inv) {
-    return new ItemStack[inv.getSizeInventory()];
+  public NNList<ItemStack> getRemainingItems(InventoryCrafting inv) {
+    return new NNList<>();
   }
 
 }

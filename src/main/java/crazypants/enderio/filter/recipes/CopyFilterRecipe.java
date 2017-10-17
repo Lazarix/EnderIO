@@ -1,6 +1,6 @@
 package crazypants.enderio.filter.recipes;
 
-import crazypants.enderio.conduit.item.FilterRegister;
+import com.enderio.core.common.util.NNList;
 import crazypants.enderio.filter.FilterRegistry;
 import crazypants.enderio.filter.IItemFilterUpgrade;
 import net.minecraft.inventory.InventoryCrafting;
@@ -44,7 +44,7 @@ public class CopyFilterRecipe implements IRecipe{
       return false;
     }
     output = filterInput.copy();
-    output.stackSize = blankCount + 1;
+    output.setCount(blankCount + 1);
     return true;
 
   }
@@ -69,8 +69,8 @@ public class CopyFilterRecipe implements IRecipe{
   }
 
   @Override
-  public ItemStack[] getRemainingItems(InventoryCrafting inv) {
-    return new ItemStack[inv.getSizeInventory()];
+  public NNList<ItemStack> getRemainingItems(InventoryCrafting inv) {
+    return new NNList<>();
   }
 
 }
