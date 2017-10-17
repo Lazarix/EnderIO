@@ -128,11 +128,13 @@ public enum ModObject implements IModObject.Registerable {
 
   blockExitRail(BlockExitRail.class),
 
+  // Misc Utility Items
   itemConduitProbe(ItemConduitProbe.class),
   itemYetaWrench(ItemYetaWrench.class),
   itemXpTransfer(ItemXpTransfer.class),
   itemColdFireIgniter(ItemColdFireIgniter.class),
 
+  // Special Items
   itemCoordSelector(ItemCoordSelector.class),
   itemLocationPrintout(ItemLocationPrintout.class),
   itemTravelStaff(ItemTravelStaff.class),
@@ -140,11 +142,16 @@ public enum ModObject implements IModObject.Registerable {
   itemMagnet(ItemMagnet.class),
   blockEndermanSkull(BlockEndermanSkull.class),
   itemEnderFood(ItemEnderFood.class),
+
+  // Filters
   itemItemFilter(ItemBasicItemFilter.class),
   itemModItemFilter(ItemModItemFilter.class),
   itemPowerItemFiter(ItemPowerItemFilter.class),
   itemSpeciesItemFilter(ItemSpeciesItemFilter.class),
 
+  // Capacitors
+
+  // Quartz Blocks
   blockFusedQuartz(BlockFusedQuartz.class, "createFusedQuartz"),
   blockFusedGlass(BlockFusedQuartz.class, "createFusedGlass"),
   blockEnlightenedFusedQuartz(BlockFusedQuartz.class, "createEnlightenedFusedQuartz"),
@@ -153,11 +160,13 @@ public enum ModObject implements IModObject.Registerable {
   blockDarkFusedGlass(BlockFusedQuartz.class, "createDarkFusedGlass"),
   blockPaintedFusedQuartz(BlockPaintedFusedQuartz.class),
 
+  // Soul Vials
   itemSoulVial(ItemSoulVial.class),
 
   block_detector_block(BlockDetector.class),
   block_detector_block_silent(BlockDetector.class, "createSilent"),
 
+  // Darksteel
   itemDarkSteelHelmet(ItemDarkSteelArmor.class, "createDarkSteelHelmet"),
   itemDarkSteelChestplate(ItemDarkSteelArmor.class, "createDarkSteelChestplate"),
   itemDarkSteelLeggings(ItemDarkSteelArmor.class, "createDarkSteelLeggings"),
