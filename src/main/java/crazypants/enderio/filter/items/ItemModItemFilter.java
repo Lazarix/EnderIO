@@ -7,12 +7,12 @@ import com.enderio.core.client.handlers.SpecialTooltipHandler;
 
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.EnderIOTab;
-import crazypants.enderio.ModObject;
-import crazypants.enderio.conduit.item.FilterRegister;
 import crazypants.enderio.filter.FilterRegistry;
 import crazypants.enderio.filter.IItemFilter;
 import crazypants.enderio.filter.IItemFilterUpgrade;
 import crazypants.enderio.filter.filters.ModItemFilter;
+import crazypants.enderio.init.IModObject;
+import crazypants.enderio.init.ModObject;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -21,34 +21,39 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemModItemFilter extends Item implements IItemFilterUpgrade, IResourceTooltipProvider {
+import javax.annotation.Nonnull;
 
-  public static ItemModItemFilter create() {
-    ItemModItemFilter result = new ItemModItemFilter();
-    result.init();
-    return result;
-  }
+public class ItemModItemFilter extends Item implements IItemFilterUpgrade, IResourceTooltipProvider
+    {
 
-  protected ItemModItemFilter() {
-    setCreativeTab(EnderIOTab.tabEnderIOItems);
-    setUnlocalizedName(ModObject.itemModItemFilter.getUnlocalisedName());
-    setRegistryName(ModObject.itemModItemFilter.getUnlocalisedName());
-    setMaxDamage(0);
-    setMaxStackSize(64);
-  }
+    public static ItemModItemFilter create(@Nonnull ModObject modObject)
+        {
+        return new ItemModItemFilter(modObject);
+        }
 
-  protected void init() {
-    GameRegistry.register(this);
-  }
+    protected ItemModItemFilter(@Nonnull IModObject modObject)
+        {
+        setCreativeTab(EnderIOTab.tabEnderIOItems);
+        modObject.apply(this);
+        setMaxDamage(0);
+        setMaxStackSize(64);
+        }
 
-  @Override
-  public IItemFilter createFilterFromStack(ItemStack stack) {
-    IItemFilter filter = new ModItemFilter();
-    if(stack.getTagCompound() != null && stack.getTagCompound().hasKey("filter")) {
-      filter.readFromNBT(stack.getTagCompound().getCompoundTag("filter"));
-    }
-    return filter;
-  }
+    protected void init()
+        {
+        GameRegistry.register(this);
+        }
+
+    @Override
+    public IItemFilter createFilterFromStack(ItemStack stack)
+        {
+        IItemFilter filter = new ModItemFilter();
+        if (stack.getTagCompound() != null && stack.getTagCompound().hasKey("filter"))
+            {
+            filter.readFromNBT(stack.getTagCompound().getCompoundTag("filter"));
+            }
+        return filter;
+        }
 
 //  @Override
 //  @SideOnly(Side.CLIENT)
@@ -56,20 +61,24 @@ public class ItemModItemFilter extends Item implements IItemFilterUpgrade, IReso
 //    itemIcon = IIconRegister.registerIcon("enderio:modItemFilter");
 //  }
 
-  @Override
-  public String getUnlocalizedNameForTooltip(ItemStack stack) {
-    return getUnlocalizedName();
-  }
+    @Override
+    public String getUnlocalizedNameForTooltip(ItemStack stack)
+        {
+        return getUnlocalizedName();
+        }
 
-  @Override
-  @SideOnly(Side.CLIENT)
-  public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List<String> par3List, boolean par4) {
-    if(FilterRegistry.isFilterSet(par1ItemStack)) {
-      if(SpecialTooltipHandler.showAdvancedTooltips()) {
-        par3List.add(TextFormatting.ITALIC + EnderIO.lang.localize("itemConduitFilterUpgrade.configured"));
-        par3List.add(TextFormatting.ITALIC + EnderIO.lang.localize("itemConduitFilterUpgrade.clearConfigMethod"));
-      }
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List<String> par3List, boolean par4)
+        {
+        if (FilterRegistry.isFilterSet(par1ItemStack))
+            {
+            if (SpecialTooltipHandler.showAdvancedTooltips())
+                {
+                par3List.add(TextFormatting.ITALIC + EnderIO.lang.localize("itemConduitFilterUpgrade.configured"));
+                par3List.add(TextFormatting.ITALIC + EnderIO.lang.localize("itemConduitFilterUpgrade.clearConfigMethod"));
+                }
+            }
+        }
+
     }
-  }
-
-}

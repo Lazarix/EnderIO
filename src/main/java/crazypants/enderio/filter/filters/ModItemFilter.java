@@ -5,19 +5,17 @@ import java.util.List;
 import com.enderio.core.client.gui.widget.GhostSlot;
 import com.enderio.core.common.network.NetworkUtil;
 
-import crazypants.enderio.conduit.gui.GuiExternalConnection;
-import crazypants.enderio.conduit.gui.item.IItemFilterGui;
-import crazypants.enderio.conduit.gui.item.ModItemFilterGui;
-import crazypants.enderio.conduit.item.IItemConduit;
-import crazypants.enderio.conduit.item.NetworkedInventory;
+import com.enderio.core.common.util.NNList;
 import crazypants.enderio.filter.IItemFilter;
+import crazypants.enderio.filter.INetworkedInventory;
 import io.netty.buffer.ByteBuf;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 public class ModItemFilter implements IItemFilter {
 
@@ -32,8 +30,8 @@ public class ModItemFilter implements IItemFilter {
     if(itemStack.isEmpty()) {
       setMod(index, (String) null);
       return null;
-    }        
-    ResourceLocation ui = Item.REGISTRY.getNameForObject(itemStack.getItem());    
+    }
+    ResourceLocation ui = Item.REGISTRY.getNameForObject(itemStack.getItem());
     if(ui == null) {
       setMod(index, (String) null);
       return null;
@@ -70,11 +68,11 @@ public class ModItemFilter implements IItemFilter {
   }
 
   @Override
-  public boolean doesItemPassFilter(NetworkedInventory inv, ItemStack item) {
-    if(item == null || item.getItem() == null) {
+  public boolean doesItemPassFilter(INetworkedInventory inv, @Nonnull ItemStack item) {
+    if(item.isEmpty() || item.getItem() == null) {
       return false;
     }
-    
+
     ResourceLocation ui = Item.REGISTRY.getNameForObject(item.getItem());
     if(ui == null) {
       return false;
@@ -91,11 +89,6 @@ public class ModItemFilter implements IItemFilter {
   }
 
   @Override
-  public boolean doesFilterCaptureStack(NetworkedInventory inv, ItemStack item) {
-    return false;
-  }
-
-  @Override
   public boolean isSticky() {
     return false;
   }
@@ -104,23 +97,25 @@ public class ModItemFilter implements IItemFilter {
   public boolean isValid() {
     return true;
   }
-
-  @Override
-  public void createGhostSlots(List<GhostSlot> slots, int xOffset, int yOffset, Runnable cb) {
-  }
-
   @Override
   public int getSlotCount() {
     return 0;
   }
 
-  @Override
-  @SideOnly(Side.CLIENT)
-  public IItemFilterGui getGui(GuiExternalConnection gui, IItemConduit itemConduit, boolean isInput) {
-    return new ModItemFilterGui(gui, itemConduit, isInput);
+//  @Override
+//  @SideOnly(Side.CLIENT)
+//  public IItemFilterGui getGui(GuiExternalConnection gui, IItemConduit itemConduit, boolean isInput) {
+//    return new ModItemFilterGui(gui, itemConduit, isInput);
+//  }
+
+
+@Override
+public void createGhostSlots(@Nonnull NNList<GhostSlot> slots, int xOffset, int yOffset, @Nullable Runnable cb)
+  {
+  // TODO: add a method that implements the ghost slots
   }
 
-  @Override
+@Override
   public void readFromNBT(NBTTagCompound nbtRoot) {
     for (int i = 0; i < mods.length; i++) {
       String mod = nbtRoot.getString("mod" + i);
