@@ -29,6 +29,7 @@ public abstract class AbstractMachineContainer<E extends AbstractInventoryMachin
   public AbstractMachineContainer(@Nonnull InventoryPlayer playerInv, @Nonnull E te) {
     super(playerInv, te.getAsInventory());
     this.te = te;
+    addSlots(playerInv);
   }
 
   public E getTe() {
@@ -37,8 +38,11 @@ public abstract class AbstractMachineContainer<E extends AbstractInventoryMachin
 
 @Override
   protected void addSlots(@Nonnull InventoryPlayer playerInv) {
-    addMachineSlots(playerInv);
+  if (te == null)
+    return;
+  addMachineSlots(playerInv);
 
+    //TODO: Work out a possible better workaround - Perhaps change EnderCore? (NP caused by running method before TE saved)
     if (te.getSlotDefinition().getNumUpgradeSlots() == 1) {
       addSlotToContainer(upgradeSlot = new Slot(getInv(), te.getSlotDefinition().getMinUpgradeSlot(), getUpgradeOffset().x, getUpgradeOffset().y) {
 

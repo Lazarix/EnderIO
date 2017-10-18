@@ -56,6 +56,7 @@ import crazypants.enderio.item.spawner.ItemBrokenSpawner;
 import crazypants.enderio.item.travelstaff.ItemTravelStaff;
 import crazypants.enderio.item.xptransfer.ItemXpTransfer;
 import crazypants.enderio.item.yetawrench.ItemYetaWrench;
+import crazypants.enderio.machine.alloy.BlockAlloySmelter;
 import crazypants.enderio.material.alloy.BlockAlloy;
 import crazypants.enderio.material.alloy.ItemAlloy;
 import crazypants.enderio.material.food.ItemEnderFood;
@@ -128,6 +129,9 @@ public enum ModObject implements IModObject.Registerable {
 
   blockExitRail(BlockExitRail.class),
 
+  // Machines
+  blockAlloySmelter(BlockAlloySmelter.class),
+
   // Misc Utility Items
   itemConduitProbe(ItemConduitProbe.class),
   itemYetaWrench(ItemYetaWrench.class),
@@ -145,9 +149,6 @@ public enum ModObject implements IModObject.Registerable {
 
   // Filters
   itemItemFilter(ItemBasicItemFilter.class),
-  itemModItemFilter(ItemModItemFilter.class),
-  itemPowerItemFiter(ItemPowerItemFilter.class),
-  itemSpeciesItemFilter(ItemSpeciesItemFilter.class),
 
   // Capacitors
 
