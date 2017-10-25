@@ -24,11 +24,6 @@ public class ConfigFactoryEIO implements IModGuiFactory {
   }
 
   @Override
-  public RuntimeOptionGuiHandler getHandlerFor(RuntimeOptionCategoryElement element) {
-    return null;
-  }
-
-  @Override
   public boolean hasConfigGui() {
     return true;
   }
