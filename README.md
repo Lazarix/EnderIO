@@ -1,4 +1,4 @@
-EnderIO [![Build Status](http://localhost:8080/buildStatus/icon?job=EnderIO-Base)](http://localhost:8080/job/EnderIO-Base/) (Yes I am aware that this points to localhost.)
+EnderIO [![Build Status](http://localhost:8080/buildStatus/icon?job=EnderIO-Base)](http://localhost:8080/job/EnderIO-Base/)* 
 =======
 
 All code (excluding the bundled APIs from other mods, which are covered by their respective licenses) are released without restriction into the public domain under the CC0 1.0 license (http://creativecommons.org/publicdomain/zero/1.0/legalcode) FAQ (https://wiki.creativecommons.org/CC0_FAQ).
@@ -16,3 +16,5 @@ Credits:
 - <http://freesound.org/people/Anton/>
 - <http://freesound.org/people/pj1s/>
 - <http://freesound.org/people/Syna-Max/>
+
+*(Yes I am aware that this points to localhost.)
