@@ -133,7 +133,7 @@ public class LootManager {
       lp.addEntry(createLootCapacitor(0.25F));
       lp.addEntry(createLootEntry(itemTravelStaff.getItemNN(), 1, 1, 0.1F));
 
-      // TODO 1.11 move to sub-mod
+      // TODO 1.12 move to sub-mod
       // if (ModObject.itemSpeciesItemFilter.getItem() != null) {
       // lp.addEntry(createLootEntry(ModObject.itemSpeciesItemFilter.getItemNN(), 1, 1, 0.5F));
       // }

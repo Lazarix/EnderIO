@@ -47,7 +47,7 @@ public class BRRegistrations {
     BRProxy.registerFluid(Fluids.ROCKET_FUEL.getFluid().getName(), 0.6f, 0.3f, 1.33f, conductivityWater);
     BRProxy.registerFluid(Fluids.FIRE_WATER.getFluid().getName(), 0.7f, 0.2f, 1.33f, conductivityWater);
 
-    BRProxy.registerFluid(Fluids.LIQUID_SUNSHINE.getFluid().getName(), .39f, 0.1f, 1.11f, conductivityWater);
+    BRProxy.registerFluid(Fluids.LIQUID_SUNSHINE.getFluid().getName(), .39f, 0.1f, 1.12f, conductivityWater);
     BRProxy.registerFluid(Fluids.CLOUD_SEED.getFluid().getName(), .39f, 0.05f, 1.33f, conductivityWater);
     BRProxy.registerFluid(Fluids.CLOUD_SEED_CONCENTRATED.getFluid().getName(), .39f, 0.005f, 2f, conductivityWater);
 

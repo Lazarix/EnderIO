@@ -85,7 +85,7 @@ public class SolarUpgrade extends AbstractUpgrade {
   }
 
   public static int calculateLightRatio(World world) {
-    // TODO 1.11 copy from TE
+    // TODO 1.12 copy from TE
     return 0;
   }
 

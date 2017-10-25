@@ -226,7 +226,7 @@ public class SmartModelAttacher {
 
     OverlayHolder.collectOverlayQuads(event);
     BlockStateWrapperBase.invalidate();
-    // TODO 1.11 move this to conduit sub-mod
+    // TODO 1.12 move this to conduit sub-mod
     // BlockStateWrapperConduitBundle.invalidate();
   }
 

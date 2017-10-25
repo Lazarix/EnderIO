@@ -44,7 +44,7 @@ public final class FarmersRegistry {
       .add(new ItemStack(Blocks.LEAVES, 1, 0)).add(Items.APPLE).add(Items.MELON).add(Blocks.PUMPKIN).add(Blocks.YELLOW_FLOWER).add(Blocks.RED_FLOWER);
   public static final @Nonnull Things slotItemsFertilizer = new Things().add(new ItemStack(Items.DYE, 1, 15));
 
-  // TODO 1.11: move those treetaps somewhere else
+  // TODO 1.12: move those treetaps somewhere else
   // slotItemsStacks3.addAll(TileFarmStation.TREETAPS.getItemStacks());
 
   private static final @Nonnull Things SAPLINGS = new Things("treeSapling");

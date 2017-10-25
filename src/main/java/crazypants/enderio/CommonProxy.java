@@ -64,7 +64,7 @@ public class CommonProxy {
 
     if (Config.registerRecipes) {
       MaterialRecipes.addRecipes();
-      // TODO 1.11 ConduitRecipes.addRecipes();
+      // TODO 1.12 ConduitRecipes.addRecipes();
       MachineRecipes.addRecipes();
       RecipeLoader.addRecipes();
     }

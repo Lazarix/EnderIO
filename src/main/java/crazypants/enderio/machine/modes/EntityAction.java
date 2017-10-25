@@ -7,7 +7,7 @@ import com.enderio.core.common.util.NNList;
 import crazypants.enderio.EnderIO;
 import crazypants.util.CapturedMob;
 
-public enum EntityAction { // TODO 1.11 implement on obelisks and spawner
+public enum EntityAction { // TODO 1.12 implement on obelisks and spawner
   ATTRACT("blockAttractor.action"),
   AVERT("blockSpawnGuard.action"),
   RELOCATE("blockSpawnRelocator.action"),

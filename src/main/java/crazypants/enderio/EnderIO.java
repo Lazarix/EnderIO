@@ -162,7 +162,7 @@ public class EnderIO {
     AlloyRecipeManager.getInstance().loadRecipesFromConfig();
     SliceAndSpliceRecipeManager.getInstance().loadRecipesFromConfig();
     VatRecipeManager.getInstance().loadRecipesFromConfig();
-    // TODO 1.11 EnchanterRecipeManager.getInstance().loadRecipesFromConfig();
+    // TODO 1.12 EnchanterRecipeManager.getInstance().loadRecipesFromConfig();
     SoulBinderRecipeManager.getInstance().addDefaultRecipes();
     PaintSourceValidator.instance.loadConfig();
 
@@ -189,7 +189,7 @@ public class EnderIO {
 
   @EventHandler
   public void serverStopped(@Nonnull FMLServerStoppedEvent event) {
-    // TODO 1.11 ConduitNetworkTickHandler.instance.flush();
+    // TODO 1.12 ConduitNetworkTickHandler.instance.flush();
     ServerChannelRegister.instance.reset();
   }
 
@@ -221,7 +221,7 @@ public class EnderIO {
           } else if (IMC.TELEPORT_BLACKLIST_ADD.equals(key)) {
             Config.TRAVEL_BLACKLIST.add(value);
           } else if (IMC.ENCHANTER_RECIPE.equals(key)) {
-            // TODO 1.11 EnchanterRecipeManager.getInstance().addCustomRecipes(value);
+            // TODO 1.12 EnchanterRecipeManager.getInstance().addCustomRecipes(value);
           } else if (IMC.SLINE_N_SPLICE_RECIPE.equals(key)) {
             SliceAndSpliceRecipeManager.getInstance().addCustomRecipes(key);
           }
@@ -248,7 +248,7 @@ public class EnderIO {
           } else if (IMC.FLUID_COOLANT_ADD.equals(key)) {
             FluidFuelRegister.instance.addCoolant(nbtValue);
           } else if (IMC.REDSTONE_CONNECTABLE_ADD.equals(key)) {
-            // TODO 1.11 InsulatedRedstoneConduit.addConnectableBlock(msg.getNBTValue());
+            // TODO 1.12 InsulatedRedstoneConduit.addConnectableBlock(msg.getNBTValue());
           }
         } else if (msg.isItemStackMessage()) {
           if (IMC.PAINTER_WHITELIST_ADD.equals(key)) {

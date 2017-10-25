@@ -55,7 +55,7 @@ public class PacketHandler {
     INSTANCE.registerMessage(PacketRedstoneMode.Handler.class, PacketRedstoneMode.class, nextID(), Side.SERVER);
     INSTANCE.registerMessage(GuiPacket.Handler.class, GuiPacket.class, nextID(), Side.SERVER);
     INSTANCE.registerMessage(PacketExperienceContainer.class, PacketExperienceContainer.class, nextID(), Side.CLIENT);
-    // TODO 1.11 move to sub-mod
+    // TODO 1.12 move to sub-mod
     // INSTANCE.registerMessage(PacketNutrientTank.class, PacketNutrientTank.class, nextID(), Side.CLIENT);
     INSTANCE.registerMessage(PacketConduitProbe.Handler.class, PacketConduitProbe.class, nextID(), Side.SERVER);
     INSTANCE.registerMessage(PacketConduitProbeMode.class, PacketConduitProbeMode.class, nextID(), Side.SERVER);

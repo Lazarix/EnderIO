@@ -99,7 +99,7 @@ public class ModObjectRegistry {
         ((IModObject.LifecycleInit) item).init(mo, event);
       }
 
-      // TODO 1.11: The following code should go once we're done porting.
+      // TODO 1.12: The following code should go once we're done porting.
       if (block != null) {
         Log.debug("Block " + block.getRegistryName() + " has localized name " + block.getLocalizedName());
       }

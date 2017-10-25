@@ -13,7 +13,7 @@ public class WeightedUpgrade {
   static {
     registerWeightedUpgrade(new WeightedUpgrade(SetType.TYPE, CapacitorKey.LEGACY_ENERGY_INTAKE, "intake"), 20);
     registerWeightedUpgrade(new WeightedUpgrade(SetType.TYPE, CapacitorKey.LEGACY_ENERGY_BUFFER, "buffer"), 20);
-    // TODO 1.11 put into machine sub-mod
+    // TODO 1.12 put into machine sub-mod
     // new WeightedUpgrade(SetType.NAME, CapacitorKey.ALLOY_SMELTER_POWER_USE, "smelting", 10);
     // new WeightedUpgrade(SetType.NAME, CapacitorKey.CRAFTER_TICKS, "crafting", 10);
     // new WeightedUpgrade(SetType.TYPE, CapacitorKey.ATTRACTOR_RANGE, "area", 5);

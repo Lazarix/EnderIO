@@ -71,7 +71,7 @@ public class TicProxy {
 
   public static void init(FMLPreInitializationEvent event) {
     if (isLoaded) {
-      AdditionalFluid.init(event); // TODO 1.11 needs to be called by Registry<Block> event, I'd say
+      AdditionalFluid.init(event); // TODO 1.12 needs to be called by Registry<Block> event, I'd say
     }
   }
 

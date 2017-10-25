@@ -11,5 +11,5 @@ public enum FarmingTool {
   TREETAP,
   HAND;
 
-  public final @Nonnull Things items = new Things(); // TODO 1.11
+  public final @Nonnull Things items = new Things(); // TODO 1.12
 }

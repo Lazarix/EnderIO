@@ -78,7 +78,7 @@ public class PacketConduitProbe implements IMessage {
 
       TileEntity te = world.getTileEntity(pos);
       // } else if (te instanceof ILegacyPowerReceiver) {
-      // TODO 1.11 migrate this branch to IHasConduitProbeData on the machines/capBank
+      // TODO 1.12 migrate this branch to IHasConduitProbeData on the machines/capBank
       if (te instanceof IHasConduitProbeData) {
         ChatUtil.sendNoSpam(player, ((IHasConduitProbeData) te).getConduitProbeData(player, message.side));
       }

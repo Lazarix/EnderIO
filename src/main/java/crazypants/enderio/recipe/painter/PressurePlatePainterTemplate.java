@@ -30,4 +30,4 @@ public class PressurePlatePainterTemplate extends BasicPainterTemplate<BlockPain
   }
 
 }
-// TODO 1.11 register those recipes
+// TODO 1.12 register those recipes

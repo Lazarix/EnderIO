@@ -3,7 +3,7 @@
 // Translators, run the command "gradlew checkTranslations" to get a report which keys your
 // language is missing and which keys it has that do not exist anymore.
 
-// These keys have been confirmed in 1.11
+// These keys have been confirmed in 1.12
 
 item.item_alloy_ingot_conductive_iron.name=Conductive Iron Ingot
 item.item_alloy_ingot_dark_steel.name=Dark Steel Ingot
@@ -632,7 +632,7 @@ enderio.itemConduitFilterUpgrade.clearConfigMethod=%sPlace in crafting grid to c
 enderio.itemConduitFilterUpgrade.clearConfigWarning=%sThis will clear all stored filter settings!
 
 
-// These keys have not (yet) been confirmed in 1.11
+// These keys have not (yet) been confirmed in 1.12
 
 //Power
 enderio.power.rf=RF

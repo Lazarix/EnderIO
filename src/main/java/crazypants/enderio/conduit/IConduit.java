@@ -28,7 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public interface IConduit {
 
   @SideOnly(Side.CLIENT)
-  ITabPanel createPanelForConduit(Object gui, IConduit con); // TODO 1.11 GuiExternalConnection
+  ITabPanel createPanelForConduit(Object gui, IConduit con); // TODO 1.12 GuiExternalConnection
 
   @SideOnly(Side.CLIENT)
   int getTabOrderForConduit(IConduit con);
