@@ -204,7 +204,7 @@ public class TileFarmStation extends AbstractPoweredTaskEntity implements IPaint
           tool.damageItem(1, farmerJoe);
         }
 
-        if (Prep.isInvalid(tool) || tool.stackSize == 0 || tool.getItemDamage() >= tool.getMaxDamage()) { // TODO 1.11
+        if (Prep.isInvalid(tool) || tool.stackSize == 0 || tool.getItemDamage() >= tool.getMaxDamage()) { // TODO 1.12
           destroyTool(ToolType.HOE);
           markDirty();
         }
@@ -344,7 +344,7 @@ public class TileFarmStation extends AbstractPoweredTaskEntity implements IPaint
     return Prep.isValid(stack) && stack.isItemStackDamageable() && stack.getItem().isDamageable();
   }
 
-  // TODO 1.11 clean up
+  // TODO 1.12 clean up
   private void destroyTool(ToolType type) {
     for (int i = minToolSlot; i <= maxToolSlot; i++) {
       if (Prep.isValid(inventory[i]) && type.itemMatches(inventory[i]) && inventory[i].stackSize == 0) {
@@ -551,7 +551,7 @@ public class TileFarmStation extends AbstractPoweredTaskEntity implements IPaint
           PacketHandler.INSTANCE.sendToAllAround(new PacketFarmAction(bc),
               new TargetPoint(world.provider.getDimension(), bc.getX(), bc.getY(), bc.getZ(), 64));
           if (Prep.isValid(inventory[minFirtSlot]) && inventory[minFirtSlot].stackSize == 0) {
-            inventory[minFirtSlot] = Prep.getEmpty(); // TODO 1.11 remove
+            inventory[minFirtSlot] = Prep.getEmpty(); // TODO 1.12 remove
           }
           usePower(Config.farmBonemealActionEnergyUseRF);
           bonemealCooldown = 16;
@@ -629,7 +629,7 @@ public class TileFarmStation extends AbstractPoweredTaskEntity implements IPaint
     int slot = getSupplySlotForCoord(bc);
     ItemStack inv = inventory[slot];
 
-    return 90 * (Config.farmSaplingReserveAmount - (Prep.isInvalid(inv) ? 0 : inv.stackSize)) / Config.farmSaplingReserveAmount; // TODO 1.11 clean up
+    return 90 * (Config.farmSaplingReserveAmount - (Prep.isInvalid(inv) ? 0 : inv.stackSize)) / Config.farmSaplingReserveAmount; // TODO 1.12 clean up
   }
 
   public ItemStack takeSeedFromSupplies(ItemStack stack, BlockPos forBlock) {
@@ -654,7 +654,7 @@ public class TileFarmStation extends AbstractPoweredTaskEntity implements IPaint
         inv = inv.copy();
         inv.stackSize--;
         if (inv.stackSize == 0) {
-          inv = Prep.getEmpty(); // TODO 1.11 clean up
+          inv = Prep.getEmpty(); // TODO 1.12 clean up
         }
         setInventorySlotContents(slot, inv);
         return result;
