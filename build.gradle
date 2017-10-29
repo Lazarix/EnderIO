@@ -70,7 +70,7 @@ repositories {
     maven { url = "http://maven.cil.li/" }
     maven { url = "http://maven.ic2.player.to" }
     maven { url = "http://maven.epoxide.xyz" }
-    maven { url = "http://maven.mcmoddev.com" }
+    maven { url = "https://maven.mcmoddev.com" }
     maven { url = "http://maven.covers1624.net" }
     ivy { url = "http://localhost:8080/job/EnderIO-Core/22/artifact/build/libs"
         layout "pattern", {
