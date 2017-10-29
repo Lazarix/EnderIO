@@ -3,13 +3,11 @@ package crazypants.enderio;
 import java.util.Locale;
 
 import crazypants.enderio.init.ModObject;
-import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
-import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent.MissingMapping;
-import net.minecraftforge.fml.common.registry.GameRegistry.Type;
+import net.minecraftforge.event.RegistryEvent;
 
 public class MigrationMapper {
 
-  public static void handleMappings(FMLMissingMappingsEvent event) {
+  /*public static void handleMappings(RegistryEvent.MissingMappings event) {
     for (MissingMapping mapping : event.getAll()) {
       if (EnderIO.DOMAIN.equals(mapping.resourceLocation.getResourceDomain())) {
         final String resourcePath = mapping.resourceLocation.getResourcePath();
@@ -33,5 +31,5 @@ public class MigrationMapper {
       }
     }
   }
-
+*/ //todo: fix
 }

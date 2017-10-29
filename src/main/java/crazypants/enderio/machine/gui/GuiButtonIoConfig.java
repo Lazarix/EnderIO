@@ -53,4 +53,6 @@ public class GuiButtonIoConfig<E extends TileEntity & IIoConfigurable> extends T
     return true;
   }
 
+    public void onGuiInit() {
+    }
 }

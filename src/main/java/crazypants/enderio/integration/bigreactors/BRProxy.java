@@ -35,32 +35,32 @@ public class BRProxy {
 
         // public static ReactorInteriorData getBlockData(String oreDictName) {
 
-        getBlockData = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "getBlockData" }, String.class);
+        //getBlockData = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "getBlockData" }, String.class);
 
         // public static void registerBlock(String oreDictName, float absorption, float heatEfficiency, float moderation, float heatConductivity)
 
-        registerBlock = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "registerBlock" }, String.class, float.class, float.class,
-            float.class, float.class);
+        //registerBlock = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "registerBlock" }, String.class, float.class, float.class,
+        //    float.class, float.class);
 
         // public static ReactorInteriorData getFluidData(String fluidName) {
 
-        getFluidData = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "getFluidData" }, String.class);
+        //getFluidData = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "getFluidData" }, String.class);
 
         // public static void registerFluid(String fluidName, float absorption, float heatEfficiency, float moderation, float heatConductivity)
 
-        registerFluid = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "registerFluid" }, String.class, float.class, float.class,
-            float.class, float.class);
+        //registerFluid = ReflectionHelper.findMethod(ReactorInterior, null, new String[] { "registerFluid" }, String.class, float.class, float.class,
+        //    float.class, float.class);
 
-        TurbineCoil = ReflectionHelper.getClass(BRProxy.class.getClassLoader(), "erogenousbeef.bigreactors.api.registry.TurbineCoil");
+        //TurbineCoil = ReflectionHelper.getClass(BRProxy.class.getClassLoader(), "erogenousbeef.bigreactors.api.registry.TurbineCoil");
 
         // public static CoilPartData getBlockData(String oreDictName)
 
-        getTurbineBlockData = ReflectionHelper.findMethod(TurbineCoil, null, new String[] { "getBlockData" }, String.class);
+        //getTurbineBlockData = ReflectionHelper.findMethod(TurbineCoil, null, new String[] { "getBlockData" }, String.class);
 
         // public static void registerBlock(String oreDictName, float efficiency, float bonus, float extractionRate)
 
-        registerTurbineBlock = ReflectionHelper.findMethod(TurbineCoil, null, new String[] { "registerBlock" }, String.class, float.class, float.class,
-            float.class);
+        //registerTurbineBlock = ReflectionHelper.findMethod(TurbineCoil, null, new String[] { "registerBlock" }, String.class, float.class, float.class,
+        //    float.class);
 
         isLoaded = true;
 

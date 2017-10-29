@@ -47,7 +47,7 @@ public class PaintedBlockAccessWrapper extends IBlockAccessWrapper {
     wrapped = null;
   }
 
-  @Override
+ /* @Override
   public boolean isSideSolid(@Nonnull BlockPos pos, @Nonnull EnumFacing side, boolean _default) {
     IBlockState paintSource = getPaintSource(pos);
     if (paintSource != null) {
@@ -86,7 +86,7 @@ public class PaintedBlockAccessWrapper extends IBlockAccessWrapper {
     }
     return FacadeUtil.instance.getFacade(state, wrapped, pos, null);
   }
-
+*/ //todo: fix
   private final Map<Block, TileEntity> teCache = new HashMap<Block, TileEntity>();
   
   @SuppressWarnings("null")

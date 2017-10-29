@@ -7,6 +7,7 @@ import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.state.BlockFaceShape;
 import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.cache.Cache;
@@ -294,9 +295,14 @@ public class BlockStateWrapperBase extends CacheKey implements IBlockStateWrappe
   }
 
   @Override
+  public MapColor getMapColor(IBlockAccess p_185909_1_, BlockPos p_185909_2_) {
+    return null;
+  }
+
+ /* @Override
   public @Nonnull MapColor getMapColor() {
     return state.getMapColor();
-  }
+  }*/ //todo: fix
 
   @Override
   public @Nonnull IBlockState withRotation(@Nonnull Rotation rot) {
@@ -408,11 +414,16 @@ public class BlockStateWrapperBase extends CacheKey implements IBlockStateWrappe
     return state.collisionRayTrace(worldIn, pos1, start, end);
   }
 
-  @SuppressWarnings("deprecation")
   @Override
+  public boolean isTopSolid() {
+    return false;
+  }
+
+  @SuppressWarnings("deprecation")
+ /* @Override
   public boolean isFullyOpaque() {
     return state.isFullyOpaque();
-  }
+  }*/ //todo: fix
 
   @Override
   public boolean doesSideBlockRendering(@Nonnull IBlockAccess world1, @Nonnull BlockPos pos1, @Nonnull EnumFacing side) {
@@ -469,6 +480,11 @@ public class BlockStateWrapperBase extends CacheKey implements IBlockStateWrappe
   @Override
   public boolean causesSuffocation() {
     return state.causesSuffocation();
+  }
+
+  @Override
+  public BlockFaceShape getBlockFaceShape(IBlockAccess worldIn, BlockPos pos, EnumFacing facing) {
+    return null;
   }
 
 }

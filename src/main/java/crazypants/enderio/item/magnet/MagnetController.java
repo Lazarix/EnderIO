@@ -123,6 +123,7 @@ public class MagnetController {
     }
   }
 
+/*
   private static boolean isBlackListed(EntityItem entity) {
     for (Item blacklisted : blacklist) {
       if (blacklisted == entity.getEntityItem().getItem()) {
@@ -131,6 +132,7 @@ public class MagnetController {
     }
     return false;
   }
+*/ //todo: fix
 
   private List<Entity> selectEntitiesWithinAABB(World world, AxisAlignedBB bb) {
     List<Entity> arraylist = null;
@@ -157,13 +159,13 @@ public class MagnetController {
           for (Entity entity : entityLists[chunkY]) {
             if (!entity.isDead) {
               boolean isValidTarget = false;
-              if (entity.getEntityBoundingBox().intersectsWith(bb)) {
+/*              if (entity.getEntityBoundingBox().intersectsWith(bb)) {
                 if (entity instanceof EntityItem) {
                   isValidTarget = !hasSolegnoliaAround(entity) && !isBlackListed((EntityItem) entity);
                 } else if (entity instanceof EntityXPOrb) {
                   isValidTarget = true;
                 }
-              }
+              }*/ //todo: fix
               isValidTarget = isValidTarget && !MagnetUtil.isReserved(entity);
               if (isValidTarget) {
                 if (arraylist == null) {

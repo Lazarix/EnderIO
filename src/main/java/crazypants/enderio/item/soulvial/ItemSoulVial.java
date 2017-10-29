@@ -208,7 +208,7 @@ public class ItemSoulVial extends Item implements IResourceTooltipProvider, IHav
     return capturedMob.toStack(this, 1, 1);
   }
 
-  @Override
+/*  @Override
   public void getSubItems(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     if (tab == getCreativeTab() || tab == EnderIOTab.tabNoTab) {
       super.getSubItems(itemIn, tab, subItems);
@@ -218,7 +218,7 @@ public class ItemSoulVial extends Item implements IResourceTooltipProvider, IHav
         subItems.add(capturedMob.toStack(itemIn, 1, 1));
       }
     }
-  }
+  }*/ //todo: fix
 
   @Override
   public @Nonnull CreativeTabs[] getCreativeTabs() {
@@ -230,7 +230,7 @@ public class ItemSoulVial extends Item implements IResourceTooltipProvider, IHav
     return getUnlocalizedName(itemStack);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
     CapturedMob capturedMob = CapturedMob.create(par1ItemStack);

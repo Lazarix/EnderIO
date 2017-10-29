@@ -65,7 +65,7 @@ public class ItemBasicItemFilter extends Item implements IItemFilterUpgrade, IHa
     return getUnlocalizedName() + "_" + BasicFilterTypes.getTypeFromMeta(par1ItemStack.getMetadata());
   }
 
-  @Override
+ // @Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item par1, @Nonnull CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     for (BasicFilterTypes filterType : BasicFilterTypes.values()) {
@@ -73,7 +73,7 @@ public class ItemBasicItemFilter extends Item implements IItemFilterUpgrade, IHa
     }
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
     if (FilterRegistry.isFilterSet(par1ItemStack)) {

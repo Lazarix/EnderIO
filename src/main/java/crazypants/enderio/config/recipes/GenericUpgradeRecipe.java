@@ -11,7 +11,7 @@ import net.minecraftforge.oredict.RecipeSorter;
 import net.minecraftforge.oredict.RecipeSorter.Category;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 
-public class GenericUpgradeRecipe extends ShapedOreRecipe {
+/*public class GenericUpgradeRecipe extends ShapedOreRecipe {
 
   static {
     RecipeSorter.register("EnderIO:genericUpgradeRecipe", GenericUpgradeRecipe.class, Category.SHAPED, "after:minecraft:shaped");
@@ -43,4 +43,4 @@ public class GenericUpgradeRecipe extends ShapedOreRecipe {
     return result;
   }
 
-}
+}*/ //todo: fix

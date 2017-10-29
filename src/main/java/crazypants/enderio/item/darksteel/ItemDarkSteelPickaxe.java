@@ -85,7 +85,7 @@ public class ItemDarkSteelPickaxe extends ItemPickaxe implements IAdvancedToolti
     modObject.apply(this);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     @Nonnull
@@ -199,7 +199,7 @@ public class ItemDarkSteelPickaxe extends ItemPickaxe implements IAdvancedToolti
     return SpoonUpgrade.loadFromItem(item) != null;
   }
 
-  @Override
+/*  @Override
   public float getStrVsBlock(@Nonnull ItemStack stack, @Nonnull IBlockState state) {
     if (state.getMaterial() == Material.GLASS) {
       return toolMaterial.getEfficiencyOnProperMaterial();
@@ -215,7 +215,7 @@ public class ItemDarkSteelPickaxe extends ItemPickaxe implements IAdvancedToolti
       return toolMaterial.getEfficiencyOnProperMaterial();
     }
     return super.getStrVsBlock(stack, state);
-  }
+  }*/ //todo: fix
 
   public static boolean isToolEffective(@Nonnull IBlockState state, @Nonnull ItemStack stack) {
     for (String type : stack.getItem().getToolClasses(stack)) {

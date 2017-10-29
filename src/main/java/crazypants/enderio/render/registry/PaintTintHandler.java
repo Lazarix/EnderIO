@@ -19,7 +19,7 @@ import net.minecraft.world.IBlockAccess;
 
 public class PaintTintHandler implements IBlockColor, IItemColor {
 
-  @Override
+  /*@Override
   public int getColorFromItemstack(@Nonnull ItemStack stack, int tintIndex) {
     if (Prep.isInvalid(stack)) {
       return -1;
@@ -48,7 +48,7 @@ public class PaintTintHandler implements IBlockColor, IItemColor {
       return ((ITintedItem) block).getItemTint(stack, tintIndex);
     }
     return -1;
-  }
+  }*/ //todo: fix
 
   @Override
   public int colorMultiplier(@Nonnull IBlockState state, @Nullable IBlockAccess world, @Nullable BlockPos pos, int tintIndex) {
@@ -79,4 +79,8 @@ public class PaintTintHandler implements IBlockColor, IItemColor {
     return -1;
   }
 
+  @Override
+  public int colorMultiplier(ItemStack stack, int tintIndex) {
+    return 0;
+  }
 }

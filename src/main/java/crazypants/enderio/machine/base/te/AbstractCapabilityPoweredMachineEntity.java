@@ -49,7 +49,7 @@ public abstract class AbstractCapabilityPoweredMachineEntity extends AbstractCap
     this(subclassInventory, modObject, null, null, null);
   }
 
-  private AbstractCapabilityPoweredMachineEntity(@Nullable EnderInventory subclassInventory, @Nonnull IModObject modObject,
+  public AbstractCapabilityPoweredMachineEntity(@Nullable EnderInventory subclassInventory, @Nonnull IModObject modObject,
       @Nullable ICapacitorKey maxEnergyRecieved, @Nullable ICapacitorKey maxEnergyStored, @Nullable ICapacitorKey maxEnergyUsed) {
     super(subclassInventory);
     getInventory().add(Type.UPGRADE, CAPSLOT, new InventorySlot(Filters.CAPACITORS, null, 1));

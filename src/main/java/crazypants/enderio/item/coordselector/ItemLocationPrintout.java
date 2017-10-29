@@ -108,7 +108,7 @@ public class ItemLocationPrintout extends Item implements IGuiHandler {
     }
   }
 
-  @Override
+  /*@Override
   public void addInformation(@Nonnull ItemStack stack, @Nonnull EntityPlayer player, @Nonnull List<String> list, boolean p_77624_4_) {
     TelepadTarget target = TelepadTarget.readFromNBT(stack);
     if (target != null) {
@@ -118,7 +118,7 @@ public class ItemLocationPrintout extends Item implements IGuiHandler {
       }
     }
     super.addInformation(stack, player, list, p_77624_4_);
-  }
+  }*/ //todo: fix
 
   @Override
   public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -158,7 +158,7 @@ public class ItemLocationPrintout extends Item implements IGuiHandler {
     }
   }
 
-  @Override
+  //@Override
   public void getSubItems(@Nonnull Item itemIn, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     return;
   }

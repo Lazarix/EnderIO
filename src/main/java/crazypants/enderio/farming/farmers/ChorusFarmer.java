@@ -30,9 +30,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry.Impl;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class ChorusFarmer extends Impl<IFarmerJoe> implements IFarmerJoe {
+public class ChorusFarmer extends IForgeRegistryEntry.Impl<IFarmerJoe> implements IFarmerJoe {
 
   private final @Nonnull Item flowerItem;
 

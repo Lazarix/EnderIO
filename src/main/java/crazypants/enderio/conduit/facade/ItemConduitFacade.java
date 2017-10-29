@@ -108,11 +108,11 @@ public class ItemConduitFacade extends Item implements IAdvancedTooltipProvider,
     return EnumActionResult.PASS;
   }
 
-  @Override
+  /*@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack item, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> list, boolean par4) {
     super.addInformation(item, par2EntityPlayer, list, par4);
-  }
+  }*/ //todo: fix
 
   @Override
   public @Nonnull String getUnlocalizedNameForTooltip(@Nonnull ItemStack itemStack) {
@@ -141,7 +141,7 @@ public class ItemConduitFacade extends Item implements IAdvancedTooltipProvider,
     }
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item itemIn, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     for (EnumFacadeType type : EnumFacadeType.values()) {

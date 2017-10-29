@@ -63,7 +63,7 @@ public class CommonProxy {
     MinecraftForge.EVENT_BUS.register(DarkSteelRecipeManager.instance);
 
     if (Config.registerRecipes) {
-      MaterialRecipes.addRecipes();
+      //MaterialRecipes.addRecipes(); //todo: fix
       // TODO 1.12 ConduitRecipes.addRecipes();
       MachineRecipes.addRecipes();
       RecipeLoader.addRecipes();

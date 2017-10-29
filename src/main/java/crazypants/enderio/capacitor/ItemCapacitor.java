@@ -70,7 +70,7 @@ public class ItemCapacitor extends Item implements ICapacitorDataItem, IHaveRend
     return getUnlocalizedName() + "." + getCapacitorData(stack).getUnlocalizedName();
   }
 
-  @Override  
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item par1, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     for (int j = 0; j < DefaultCapacitorData.values().length - 1; ++j) {
@@ -83,7 +83,7 @@ public class ItemCapacitor extends Item implements ICapacitorDataItem, IHaveRend
     return MathHelper.clamp(stack.getItemDamage(), 0, DefaultCapacitorData.values().length - 1);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack stack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean advanced) {
     par3List.add(Lang.MACHINE_UPGRADE.get());

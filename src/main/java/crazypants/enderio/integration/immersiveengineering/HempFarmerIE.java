@@ -13,9 +13,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry.Impl;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class HempFarmerIE extends Impl<IFarmerJoe> implements IFarmerJoe {
+public class HempFarmerIE extends IForgeRegistryEntry.Impl<IFarmerJoe> implements IFarmerJoe {
 
   public static HempFarmerIE create() {
     if (Block.REGISTRY.containsKey(new ResourceLocation("ImmersiveEngineering", "hemp"))) {

@@ -15,7 +15,7 @@ import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.stats.AchievementList;
+//import net.minecraft.stats.AchievementList;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 
 public class ContainerAlloySmelter extends AbstractMachineContainer<TileAlloySmelter> implements IRemoteExec.IContainer {
@@ -55,6 +55,11 @@ public class ContainerAlloySmelter extends AbstractMachineContainer<TileAlloySme
     });
     addSlotToContainer(new SlotSmelter(getInv(), 3, 79, 57));
 
+  }
+
+  @Override
+  public boolean canInteractWith(EntityPlayer playerIn) {
+    return false;
   }
 
   private class SlotSmelter extends Slot {
@@ -101,12 +106,12 @@ public class ContainerAlloySmelter extends AbstractMachineContainer<TileAlloySme
       }
       numResults = 0;
 
-      if (output.getItem() == Items.IRON_INGOT) {
+/*      if (output.getItem() == Items.IRON_INGOT) {
         player.addStat(AchievementList.ACQUIRE_IRON, 1);
       }
       if (output.getItem() == Items.COOKED_FISH) {
         player.addStat(AchievementList.COOK_FISH, 1);
-      }
+      }*/ //todo: fix
     }
   }
 

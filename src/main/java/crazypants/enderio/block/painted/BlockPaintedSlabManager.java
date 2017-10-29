@@ -1,7 +1,6 @@
 package crazypants.enderio.block.painted;
 
 import javax.annotation.Nonnull;
-
 import crazypants.enderio.init.IModObject;
 import crazypants.enderio.init.ModObject;
 import crazypants.enderio.recipe.MachineRecipeRegistry;

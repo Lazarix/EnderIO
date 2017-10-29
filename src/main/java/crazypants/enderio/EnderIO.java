@@ -57,11 +57,11 @@ import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms.IMCMessage;
 import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerAboutToStartEvent;
 import net.minecraftforge.fml.common.event.FMLServerStoppedEvent;
+import net.minecraftforge.event.RegistryEvent;
 
 @Mod(modid = crazypants.enderio.EnderIO.MODID, name = crazypants.enderio.EnderIO.MOD_NAME, version = crazypants.enderio.EnderIO.VERSION, //
     dependencies = "after:endercore;after:hwyla;after:jei", guiFactory = "crazypants.enderio.config.ConfigFactoryEIO")
@@ -281,9 +281,11 @@ public class EnderIO {
   }
 
   @EventHandler
-  public static void handleMappings(FMLMissingMappingsEvent event) {
+/*
+  public static void handleMappings(RegistryEvent.MissingMappings event) {
     MigrationMapper.handleMappings(event);
   }
+*/ //todo: fix
 
   public static @Nonnull EnderIO getInstance() {
     return NullHelper.notnullF(instance, "instance is missing");

@@ -256,14 +256,14 @@ public class BlockPaintedWall extends BlockWall implements ITileEntityProvider, 
     return true;
   }
 
-  @Override
+/*  @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
-
+  }*/ //todo: fix
+  
   @Override
   @SideOnly(Side.CLIENT)
   public List<IBlockState> mapBlockRender(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, BlockRenderLayer blockLayer,

@@ -6,9 +6,9 @@ import com.enderio.core.common.util.stackable.Things;
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.Log;
 import crazypants.enderio.fluid.BlockFluidEio;
-import crazypants.enderio.fluid.BlockFluidEio.MoltenEnder;
+//import crazypants.enderio.fluid.BlockFluidEio.MoltenEnder;
 import crazypants.enderio.fluid.BlockFluidEio.MoltenGlowstone;
-import crazypants.enderio.fluid.BlockFluidEio.MoltenRedstone;
+//import crazypants.enderio.fluid.BlockFluidEio.MoltenRedstone;
 import crazypants.enderio.fluid.Fluids;
 import crazypants.util.Prep;
 import net.minecraft.block.material.Material;
@@ -76,7 +76,7 @@ public class AdditionalFluid {
     if (FluidRegistry.registerFluid(f)) {
       if (REGISTER_GLOWSTONE_BLOCK) {
         MoltenGlowstone block = new BlockFluidEio.MoltenGlowstone(f, Material.WATER, 0xffbc5e);
-        block.init();
+        //block.init(); //todo: fix
         f.setBlock(block);
         if (!EnderIO.proxy.isDedicatedServer()) {
           Fluids.registerFluidBlockRendering(f);
@@ -121,14 +121,14 @@ public class AdditionalFluid {
     f.setTemperature(1700 + 273);
     f.setViscosity(1500);
     if (FluidRegistry.registerFluid(f)) {
-      if (REGISTER_REDSTONE_BLOCK) {
+      /*if (REGISTER_REDSTONE_BLOCK) {
         MoltenRedstone block = new BlockFluidEio.MoltenRedstone(f, Material.WATER, 0xff0000);
         block.init();
         f.setBlock(block);
         if (!EnderIO.proxy.isDedicatedServer()) {
           Fluids.registerFluidBlockRendering(f);
         }
-      }
+      }*/ //todo: fix
       if (FluidRegistry.isUniversalBucketEnabled()) {
         FluidRegistry.addBucketForFluid(f);
       }
@@ -170,14 +170,14 @@ public class AdditionalFluid {
     f.setTemperature(1000 + 273);
     f.setViscosity(35);
     if (FluidRegistry.registerFluid(f)) {
-      if (REGISTER_ENDER_BLOCK) {
+      /*if (REGISTER_ENDER_BLOCK) {
         MoltenEnder block = new BlockFluidEio.MoltenEnder(f, Material.WATER, 0x1b7b6b);
         block.init();
         f.setBlock(block);
         if (!EnderIO.proxy.isDedicatedServer()) {
           Fluids.registerFluidBlockRendering(f);
         }
-      }
+      }*/ //todo: fix
       if (FluidRegistry.isUniversalBucketEnabled()) {
         FluidRegistry.addBucketForFluid(f);
       }

@@ -159,7 +159,7 @@ public class ModObjectRegistry {
           params[i] = entry.getValue().get(i + 1);
         }
         Log.debug("Registering TileEntity " + entry.getKey() + " as " + entry.getValue().get(0) + " with aliases " + Arrays.asList(params));
-        GameRegistry.registerTileEntityWithAlternatives(entry.getKey(), entry.getValue().get(0), params);
+        //GameRegistry.registerTileEntityWithAlternatives(entry.getKey(), entry.getValue().get(0), params); //todo: fix
       }
     }
   }

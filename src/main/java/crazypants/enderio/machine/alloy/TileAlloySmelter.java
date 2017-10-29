@@ -26,6 +26,11 @@ import static crazypants.enderio.capacitor.CapacitorKey.LEGACY_ENERGY_USE;
 @Storable
 public class TileAlloySmelter extends AbstractPoweredTaskEntity implements IPaintable.IPaintableTileEntity {
 
+  @Override
+  public void update() {
+    
+  }
+
   public static enum Mode {
     ALL,
     ALLOY,

@@ -48,7 +48,7 @@ public class ItemAlloy extends Item implements IHaveRenderers {
     return getUnlocalizedName() + "_" + Alloy.getTypeFromMeta(stack.getItemDamage()).getBaseName();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull final Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull final NonNullList<ItemStack> list) {
     NNList.of(Alloy.class).apply(new Callback<Alloy>() {

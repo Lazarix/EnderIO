@@ -18,7 +18,7 @@ public class EnchantmentSoulBound extends Enchantment implements IAdvancedEnchan
 
   public static EnchantmentSoulBound create() {
     EnchantmentSoulBound res = new EnchantmentSoulBound();
-    GameRegistry.register(res);
+    //GameRegistry.register(res); //todo: fix
     return res;
   }
 

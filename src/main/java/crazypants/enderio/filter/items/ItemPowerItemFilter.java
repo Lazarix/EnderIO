@@ -31,9 +31,11 @@ public class ItemPowerItemFilter extends Item implements IItemFilterUpgrade, IRe
     setMaxStackSize(64);
   }
 
+/*
   protected void init() {
     GameRegistry.register(this);
   }
+*/ //todo: fix
 
   @Override
   public IItemFilter createFilterFromStack(@Nonnull ItemStack stack) {

@@ -171,7 +171,7 @@ public abstract class BlockPaintedSlab extends BlockSlab implements ITileEntityP
     if (!isDouble()) {
       PainterUtil2.setSourceBlock(pickBlock, getPaintSource(bs, world, pos));
     } else {
-      if ((target.hitVec.yCoord - (int) target.hitVec.yCoord) > 0.5) {
+      if ((target.hitVec.y - (int) target.hitVec.y) > 0.5) {
         PainterUtil2.setSourceBlock(pickBlock, getPaintSource2(bs, world, pos));
       } else {
         PainterUtil2.setSourceBlock(pickBlock, getPaintSource(bs, world, pos));
@@ -373,13 +373,13 @@ public abstract class BlockPaintedSlab extends BlockSlab implements ITileEntityP
     return super.shouldSideBeRendered(ourBlockState, worldIn, here, side);
   }
 
-  @Override
+/*  @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

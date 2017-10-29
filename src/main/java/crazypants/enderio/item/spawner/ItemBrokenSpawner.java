@@ -45,7 +45,7 @@ public class ItemBrokenSpawner extends Item {
   }
 
   @SuppressWarnings("null")
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item par1, @Nonnull CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     for (ResourceLocation mobType : CREATIVE_TYPES) {
@@ -53,7 +53,7 @@ public class ItemBrokenSpawner extends Item {
     }
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
     CapturedMob mob = CapturedMob.create(par1ItemStack);

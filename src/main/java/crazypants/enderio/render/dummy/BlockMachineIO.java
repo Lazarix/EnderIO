@@ -61,7 +61,7 @@ public class BlockMachineIO extends Block {
     return BlockRenderLayer.CUTOUT;
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
   }

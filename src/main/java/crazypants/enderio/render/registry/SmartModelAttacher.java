@@ -109,7 +109,7 @@ public class SmartModelAttacher {
         ModelResourceLocation location = new ModelResourceLocation(registryName, "inventory");
         if (item.getHasSubtypes()) {
           NNList<ItemStack> list = new NNList<ItemStack>();
-          item.getSubItems(item, EnderIOTab.tabNoTab, list);
+          //item.getSubItems(item, EnderIOTab.tabNoTab, list); //todo: fix
           for (ItemStack itemStack : list) {
             ModelLoader.setCustomModelResourceLocation(item, itemStack.getItemDamage(), location);
           }

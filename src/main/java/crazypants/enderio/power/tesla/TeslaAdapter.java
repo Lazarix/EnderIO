@@ -63,7 +63,7 @@ public class TeslaAdapter implements IPowerApiAdapter {
     return new TeslaToForgeAdapter(capHolder, capConsumer, capProducer);
   }
 
-  @SubscribeEvent
+/*  @SubscribeEvent
   public static void attachCapabilities(AttachCapabilitiesEvent.TileEntity evt) {
     if (evt.getCapabilities().containsKey(KEY)) {
       return;
@@ -74,6 +74,6 @@ public class TeslaAdapter implements IPowerApiAdapter {
     } else if (te instanceof ILegacyPoweredTile) {
       evt.addCapability(KEY, new InternalPoweredTileWrapper.PoweredTileCapabilityProvider((ILegacyPoweredTile) te));
     }
-  }
+  }*/ //todo: fix
 
 }

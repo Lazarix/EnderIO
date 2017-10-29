@@ -13,14 +13,14 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameData;
+//import net.minecraftforge.fml.common.registry.GameData;
 
 public class ItemHelper {
 
   private ItemHelper() {
   }
 
-  public static @Nonnull NNList<ItemStack> getValidItems() {
+ /* public static @Nonnull NNList<ItemStack> getValidItems() {
     final NNList<ItemStack> list = new NNList<ItemStack>();
     final NNList<ItemStack> sublist = new NNList<ItemStack>();
     for (final Item item : GameData.getItemRegistry()) {
@@ -42,6 +42,6 @@ public class ItemHelper {
       }
     }
     return list;
-  }
+  }*/ //todo: fix
 
 }

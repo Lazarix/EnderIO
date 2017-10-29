@@ -48,4 +48,6 @@ public class RedstoneModeButton<T extends TileEntity & IRedstoneModeControlable>
     }
   }
 
+  public void onGuiInit() {
+  }
 }

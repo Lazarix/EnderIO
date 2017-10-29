@@ -46,8 +46,8 @@ public class GuiAlloySmelter extends GuiPoweredMachineBase<TileAlloySmelter> {
   public void initGui() {
     super.initGui();
 
-    vanillaFurnaceButton.xPosition = guiLeft + vanillaFurnaceTooltip.getBounds().x;
-    vanillaFurnaceButton.yPosition = guiTop + vanillaFurnaceTooltip.getBounds().y;
+    vanillaFurnaceButton.x = guiLeft + vanillaFurnaceTooltip.getBounds().x;
+    vanillaFurnaceButton.y = guiTop + vanillaFurnaceTooltip.getBounds().y;
 
     buttonList.add(vanillaFurnaceButton);
     addToolTip(vanillaFurnaceTooltip);

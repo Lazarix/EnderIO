@@ -223,11 +223,11 @@ public class ClientProxy extends CommonProxy {
     return stack.getItem().getCreativeTab();
   }
 
-  @SuppressWarnings("null")
+ /* @SuppressWarnings("null")
   @Override
   public void getSubItems(@Nonnull Item itemIn, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     itemIn.getSubItems(itemIn, tab, subItems);
-  }
+  }*/ //todo: fix
 
   @SuppressWarnings("null")
   @Override

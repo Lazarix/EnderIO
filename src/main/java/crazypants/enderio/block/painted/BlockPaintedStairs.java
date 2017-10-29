@@ -291,13 +291,13 @@ public class BlockPaintedStairs extends BlockStairs implements ITileEntityProvid
     return super.shouldSideBeRendered(bs, worldIn, pos, side);
   }
 
-  @Override
+ /* @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

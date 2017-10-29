@@ -68,7 +68,7 @@ public class ItemDarkSteelShears extends ItemShears implements IAdvancedTooltipP
   }
 
   private final MultiHarvestComparator harvestComparator = new MultiHarvestComparator();
-  private final EntityComparator entityComparator = new EntityComparator();
+  //private final EntityComparator entityComparator = new EntityComparator(); //todo: fix
 
   protected ItemDarkSteelShears(@Nonnull IModObject modObject) {
     this.setMaxDamage(this.getMaxDamage() * Config.darkSteelShearsDurabilityFactor);
@@ -86,7 +86,7 @@ public class ItemDarkSteelShears extends ItemShears implements IAdvancedTooltipP
     return OreDictionaryHelper.hasName(right, Alloy.DARK_STEEL.getOreIngot());
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     ItemStack is = new ItemStack(this);
@@ -179,8 +179,8 @@ public class ItemDarkSteelShears extends ItemShears implements IAdvancedTooltipP
           entity.posZ + Config.darkSteelShearsEntityAreaBoostWhenPowered);
 
       List<Entity> sortedTargets = new ArrayList<Entity>(entity.world.getEntitiesWithinAABB(Entity.class, bb, selectShearable));
-      entityComparator.refPoint = entity;
-      Collections.sort(sortedTargets, entityComparator);
+      //entityComparator.refPoint = entity; //todo: fix
+      //Collections.sort(sortedTargets, entityComparator); //todo: fix
 
       boolean result = false;
       int maxSheep = Math.min(sortedTargets.size(), powerStored / Config.darkSteelShearsPowerUsePerDamagePoint);
@@ -279,7 +279,7 @@ public class ItemDarkSteelShears extends ItemShears implements IAdvancedTooltipP
 
   }
 
-  private static class EntityComparator implements Comparator<Entity> {
+/*  private static class EntityComparator implements Comparator<Entity> {
 
     Entity refPoint;
 
@@ -296,7 +296,7 @@ public class ItemDarkSteelShears extends ItemShears implements IAdvancedTooltipP
       return 0;
     }
 
-  }
+  }*/ //todo: fix
 
   @Override
   public void renderItemOverlayIntoGUI(@Nonnull ItemStack stack, int xPosition, int yPosition) {

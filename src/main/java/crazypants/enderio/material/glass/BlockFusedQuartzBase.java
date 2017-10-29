@@ -86,7 +86,7 @@ public abstract class BlockFusedQuartzBase<T extends TileEntityEio> extends Bloc
     return getMetaFromState(state);
   }
 
-  @Override
+  //@Override
   public boolean isBlockSolid(@Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos, @Nonnull EnumFacing side) {
     return true;
   }
@@ -120,10 +120,10 @@ public abstract class BlockFusedQuartzBase<T extends TileEntityEio> extends Bloc
       super(block);
     }
 
-    @Override
+    //@Override
     @SideOnly(Side.CLIENT)
     public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
-      super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4);
+      //super.addInformation(par1ItemStack, par2EntityPlayer, par3List, par4); //todo: fix
       FusedQuartzType type = determineQuartzType(par1ItemStack);
       if (type.isBlastResistant()) {
         par3List.add(EnderIO.lang.localize("blastResistant"));

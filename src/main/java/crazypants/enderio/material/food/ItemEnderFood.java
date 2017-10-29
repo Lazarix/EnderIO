@@ -43,7 +43,7 @@ public class ItemEnderFood extends ItemFood implements IResourceTooltipProvider,
     modObject.apply(this);
   }
 
-  @Override
+  //@Override
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     for (EnderFood f : EnderFood.VALUES) {
       list.add(f.getStack());

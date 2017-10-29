@@ -79,7 +79,7 @@ public class ItemMagnet extends AbstractPoweredItem implements IResourceTooltipP
 
   static MagnetController controller = new MagnetController();
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     ItemStack is = new ItemStack(this);
@@ -90,14 +90,14 @@ public class ItemMagnet extends AbstractPoweredItem implements IResourceTooltipP
     par3List.add(is);
   }
 
-  @Override
+  /*@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack itemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> list, boolean par4) {
     super.addInformation(itemStack, par2EntityPlayer, list, par4);
     String str = PowerDisplayUtil.formatPower(NbtValue.ENERGY.getInt(itemStack)) + "/" + PowerDisplayUtil.formatPower(Config.magnetPowerCapacityRF) + " "
         + PowerDisplayUtil.abrevation();
     list.add(str);
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

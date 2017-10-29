@@ -82,7 +82,7 @@ public class ItemExistingItemFilter extends Item implements IItemFilterUpgrade, 
     return getUnlocalizedName();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
     if(FilterRegistry.isFilterSet(par1ItemStack)) {

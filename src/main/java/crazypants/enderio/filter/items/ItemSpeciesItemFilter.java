@@ -37,9 +37,11 @@ public class ItemSpeciesItemFilter extends Item implements IItemFilterUpgrade, I
     setMaxStackSize(64);
   }
 
+/*
   protected void init() {
     GameRegistry.register(this);
   }
+*/ //todo: fix
 
   @Override
   public IItemFilter createFilterFromStack(ItemStack stack) {
@@ -68,7 +70,7 @@ public class ItemSpeciesItemFilter extends Item implements IItemFilterUpgrade, I
 //    par3List.add(new ItemStack(this, 1, 0));
 //  }
 
-  @Override
+ // @Override
   @SideOnly(Side.CLIENT)
   public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List<String> par3List, boolean par4) {
     if(FilterRegistry.isFilterSet(par1ItemStack)) {

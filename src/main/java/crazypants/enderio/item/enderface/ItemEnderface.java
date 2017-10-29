@@ -33,7 +33,7 @@ public class ItemEnderface extends Item implements IHaveRenderers {
     return true;
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item itemIn, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     if (tab == EnderIOTab.tabNoTab) {

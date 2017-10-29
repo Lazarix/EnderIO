@@ -50,7 +50,7 @@ import net.minecraft.world.IWorldEventListener;
 import net.minecraft.world.MinecraftException;
 import net.minecraft.world.NextTickListEntry;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldSavedData;
+import net.minecraft.world.storage.WorldSavedData;
 import net.minecraft.world.WorldSettings;
 import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.Biome;
@@ -80,11 +80,11 @@ public class PickupWorld extends World {
     this.player = player;
   }
 
-  @Override
+  /*@Override
   public boolean spawnEntity(@Nonnull Entity entityIn) {
     if (entityIn instanceof EntityItem) {
       final EntityItem entityItem = (EntityItem) entityIn;
-      ItemStack itemstack = entityItem.getEntityItem();
+      ItemStack itemstack = entityItem.getItem();
       int hook = ForgeEventFactory.onItemPickup(entityItem, player, itemstack);
       if (hook >= 0) {
         if (hook == 1 || player.inventory.addItemStackToInventory(itemstack)) {
@@ -99,7 +99,7 @@ public class PickupWorld extends World {
     }
     entityIn.world = wrapped;
     return wrapped.spawnEntity(entityIn);
-  }
+  }*/
 
   // from here on: just relays to the wrapped world
 
@@ -1327,10 +1327,10 @@ public class PickupWorld extends World {
     wrapped.spawnAlwaysVisibleParticle(p_190523_1_, p_190523_2_, p_190523_4_, p_190523_6_, p_190523_8_, p_190523_10_, p_190523_12_, p_190523_14_);
   }
 
-  @Override
+  /*@Override
   public boolean func_191503_g(@Nonnull Entity p_191503_1_) {
     return wrapped.func_191503_g(p_191503_1_);
-  }
+  }*/ //todo: fix
 
   @Override
   public boolean mayPlace(@Nonnull Block blockIn, @Nonnull BlockPos pos, boolean p_190527_3_, @Nonnull EnumFacing sidePlacedOn, @Nullable Entity placer) {

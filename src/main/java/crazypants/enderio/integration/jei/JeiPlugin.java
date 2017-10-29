@@ -56,8 +56,8 @@ public class JeiPlugin extends BlankModPlugin {
     List<ItemStack> inputs = new ArrayList<ItemStack>();
     inputs.add(new ItemStack(Items.STICK));
     inputs.add(Fluids.NUTRIENT_DISTILLATION.getBucket());
-    ShapelessRecipes res = new ShapelessRecipes(new ItemStack(itemMaterial.getItemNN(), 1, Material.NUTRITIOUS_STICK.ordinal()), inputs);
-    registry.addRecipes(Collections.singletonList(res));
+    //ShapelessRecipes res = new ShapelessRecipes(new ItemStack(itemMaterial.getItemNN(), 1, Material.NUTRITIOUS_STICK.ordinal()), inputs);
+    //registry.addRecipes(Collections.singletonList(res));
 
     // ItemStack tank = new ItemStack(blockTank.getBlockNN());
     // IFluidHandler cap = NullHelper.notnull(FluidUtil.getFluidHandlerCapability(tank), "internal error---fluid cap awol");

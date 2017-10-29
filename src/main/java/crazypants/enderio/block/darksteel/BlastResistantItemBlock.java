@@ -18,7 +18,7 @@ public class BlastResistantItemBlock extends ItemBlock {
     super(block);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack par1ItemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> par3List, boolean par4) {
     par3List.add(Lang.BLOCK_BLAST_RESISTANT.get());

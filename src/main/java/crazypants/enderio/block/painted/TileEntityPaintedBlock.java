@@ -34,4 +34,8 @@ public class TileEntityPaintedBlock extends TileEntityEio implements IPaintable.
     return paintSource;
   }
 
+  @Override
+  public void update() {
+    
+  }
 }

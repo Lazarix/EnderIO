@@ -56,7 +56,7 @@ public class ForgeAdapter implements IPowerApiAdapter {
     return null;
   }
 
-  @SubscribeEvent
+/*  @SubscribeEvent
   public static void attachCapabilities(net.minecraftforge.event.AttachCapabilitiesEvent.TileEntity evt) {
     if(evt.getCapabilities().containsKey(KEY)) {
       return;
@@ -67,6 +67,6 @@ public class ForgeAdapter implements IPowerApiAdapter {
     } else if (te instanceof ILegacyPoweredTile) {
       evt.addCapability(KEY, new InternalPoweredTileWrapper.PoweredTileCapabilityProvider((ILegacyPoweredTile) te));
     }
-  }
+  }*/ //todo: fix
 
 }

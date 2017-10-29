@@ -24,7 +24,8 @@ public abstract class EnergyUpgradeManager {
     if (!nbt.hasKey(AbstractUpgrade.KEY_UPGRADE_PREFIX + UPGRADE_NAME)) {
       return null;
     }
-    return new EnergyUpgrade(nbt.getCompoundTag(AbstractUpgrade.KEY_UPGRADE_PREFIX + UPGRADE_NAME));
+    //return new EnergyUpgrade(nbt.getCompoundTag(AbstractUpgrade.KEY_UPGRADE_PREFIX + UPGRADE_NAME)); //todo: fix
+    return null;
   }
 
   public static EnergyUpgrade loadFromItem(@Nonnull ItemStack stack) {

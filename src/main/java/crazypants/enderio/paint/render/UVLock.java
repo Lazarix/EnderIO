@@ -44,9 +44,15 @@ public class UVLock implements IModelState {
     return true;
   }
 
+/*
   @Override
   public Optional<TRSRTransformation> apply(Optional<? extends IModelPart> part) {
     return parent.apply(part);
   }
+*/ //todo: fix
 
+  @Override
+  public java.util.Optional<TRSRTransformation> apply(java.util.Optional<? extends IModelPart> part) {
+    return null;
+  }
 }

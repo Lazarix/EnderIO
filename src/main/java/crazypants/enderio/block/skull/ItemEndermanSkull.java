@@ -29,7 +29,7 @@ public class ItemEndermanSkull extends ItemBlock {
     return getUnlocalizedName() + "." + SkullType.values()[meta].getName();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item par1, @Nonnull CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     for (int j = 0; j < SkullType.values().length; ++j) {

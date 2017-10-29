@@ -29,6 +29,7 @@ import crazypants.enderio.render.IRenderMapper;
 import crazypants.enderio.render.ISmartRenderAwareBlock;
 import crazypants.enderio.render.pipeline.BlockStateWrapperBase;
 import crazypants.enderio.render.property.EnumRenderPart;
+import crazypants.enderio.render.property.IOMode;
 import crazypants.enderio.render.property.IOMode.EnumIOMode;
 import crazypants.enderio.render.registry.SmartModelAttacher;
 import crazypants.enderio.render.util.QuadCollector;
@@ -409,7 +410,7 @@ public class BlockPaintedPressurePlate extends BlockBasePressurePlate implements
     return 0;
   }
 
-  @Override
+  //@Override
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     for (EnumPressurePlateType type : EnumPressurePlateType.values()) {
       if (tab == EnderIOTab.tabNoTab || type.ordinal() >= EnumPressurePlateType.DARKSTEEL.ordinal()) {
@@ -445,6 +446,35 @@ public class BlockPaintedPressurePlate extends BlockBasePressurePlate implements
     }
   }
 
+  @Override
+  protected void playClickOnSound(World worldIn, BlockPos color) {
+
+  }
+
+  @Nonnull
+  @Override
+  public String getUnlocalizedNameForTooltip(@Nonnull ItemStack itemStack) {
+    return null;
+  }
+
+  @Nonnull
+  @Override
+  public String getUnlocalizedName(int meta) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public List<IBlockState> mapBlockRender(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, BlockRenderLayer blockLayer, @Nonnull QuadCollector quadCollector) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public EnumMap<EnumFacing, EnumIOMode> mapOverlayLayer(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, boolean isPainted) {
+    return null;
+  }
+
   public static class BlockItemPaintedPressurePlate extends BlockItemPaintedBlock {
 
     public BlockItemPaintedPressurePlate(@Nonnull BlockPaintedPressurePlate block) {
@@ -456,7 +486,7 @@ public class BlockPaintedPressurePlate extends BlockBasePressurePlate implements
       return EnumPressurePlateType.getTypeFromMeta(stack.getMetadata()) == EnumPressurePlateType.TUNED;
     }
 
-    @Override
+/*    @Override
     @SideOnly(Side.CLIENT)
     public void addInformation(@Nonnull ItemStack stack, @Nonnull EntityPlayer playerIn, @Nonnull List<String> tooltip, boolean advanced) {
       super.addInformation(stack, playerIn, tooltip, advanced);
@@ -466,20 +496,20 @@ public class BlockPaintedPressurePlate extends BlockBasePressurePlate implements
       }
     }
 
-  }
+  }*/ //todo: fix
 
-  @Override
+  //@Override
   public @Nonnull String getUnlocalizedName(int meta) {
     return getUnlocalizedName() + "." + EnumPressurePlateType.getTypeFromMeta(meta).getName()
         + (EnumPressurePlateType.getSilentFromMeta(meta) ? ".silent" : "");
   }
 
-  @Override
+  //@Override
   public @Nonnull String getUnlocalizedNameForTooltip(@Nonnull ItemStack itemStack) {
     return getUnlocalizedName(itemStack.getMetadata());
   }
 
-  @Override
+  /*@Override
   @SideOnly(Side.CLIENT)
   public List<IBlockState> mapBlockRender(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos,
       @Nullable BlockRenderLayer blockLayer, @Nonnull QuadCollector quadCollector) {
@@ -489,23 +519,23 @@ public class BlockPaintedPressurePlate extends BlockBasePressurePlate implements
       quadCollector.addFriendlybakedModel(blockLayer, mapRender(state, paintSource, getRotation(world, pos)), paintSource, MathHelper.getPositionRandom(pos));
     }
     return null;
-  }
+  }*/ //todo: fix
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public EnumMap<EnumFacing, EnumIOMode> mapOverlayLayer(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos,
       boolean isPainted) {
     return null;
   }
 
-  @Override
+  /*@Override
   protected void playClickOnSound(@Nonnull World worldIn, @Nonnull BlockPos color) {
     if (blockMaterial == Material.WOOD) {
       worldIn.playSound((EntityPlayer) null, color, SoundEvents.BLOCK_WOOD_PRESSPLATE_CLICK_ON, SoundCategory.BLOCKS, 0.3F, 0.8F);
     } else {
       worldIn.playSound((EntityPlayer) null, color, SoundEvents.BLOCK_STONE_PRESSPLATE_CLICK_ON, SoundCategory.BLOCKS, 0.3F, 0.6F);
     }
-
+*/ //todo: fix
   }
 
   @Override

@@ -202,13 +202,13 @@ public abstract class BlockPaintedRedstone extends BlockCompressedPowered
     return true;
   }
 
-  @Override
+  /*@Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
+  }*/ //todo: fix
 
   @SideOnly(Side.CLIENT)
   @Override

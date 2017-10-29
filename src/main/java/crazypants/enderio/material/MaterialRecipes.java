@@ -84,7 +84,7 @@ public class MaterialRecipes {
 
   }
 
-  public static void addRecipes() {
+  /*public static void addRecipes() {
 
     for (Alloy alloy : Alloy.values()) {
       GameRegistry.addRecipe(new ShapedOreRecipe(alloy.getStackBlock(), "iii", "iii", "iii", 'i', alloy.getOreIngot()));
@@ -102,6 +102,6 @@ public class MaterialRecipes {
     }
 
     GameRegistry.addRecipe(new NutritiousStickRecipe());
-  }
+  }*/ //todo: fix
 
 }

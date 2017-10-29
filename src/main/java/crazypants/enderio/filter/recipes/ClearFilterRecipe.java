@@ -7,12 +7,15 @@ import crazypants.enderio.filter.IItemFilterUpgrade;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.oredict.RecipeSorter;
 import net.minecraftforge.oredict.RecipeSorter.Category;
+
+import javax.annotation.Nullable;
 
 public class ClearFilterRecipe implements IRecipe{
 
@@ -53,6 +56,11 @@ public class ClearFilterRecipe implements IRecipe{
   }
 
   @Override
+  public boolean canFit(int width, int height) {
+    return false;
+  }
+
+  //@Override
   public int getRecipeSize() {
     return 1;
   }
@@ -74,4 +82,19 @@ public class ClearFilterRecipe implements IRecipe{
     return new NNList<>();
   }
 
+  @Override
+  public IRecipe setRegistryName(ResourceLocation name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public ResourceLocation getRegistryName() {
+    return null;
+  }
+
+  @Override
+  public Class<IRecipe> getRegistryType() {
+    return null;
+  }
 }

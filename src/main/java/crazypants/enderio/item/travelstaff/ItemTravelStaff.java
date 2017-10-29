@@ -97,7 +97,7 @@ public class ItemTravelStaff extends Item implements IItemOfTravel, IAdvancedToo
     EnergyUpgradeManager.extractEnergy(item, powerUse, false);
   }
 
-  @Override
+ // @Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     ItemStack is = new ItemStack(this);

@@ -17,9 +17,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry.Impl;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class ForestryFarmer extends Impl<IFarmerJoe> implements IFarmerJoe {
+public class ForestryFarmer extends IForgeRegistryEntry.Impl<IFarmerJoe> implements IFarmerJoe {
   private final @Nonnull ITreeRoot root;
   private final @Nonnull Item forestrySapling;
 

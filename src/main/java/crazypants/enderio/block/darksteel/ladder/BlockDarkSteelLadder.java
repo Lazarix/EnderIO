@@ -38,7 +38,7 @@ public class BlockDarkSteelLadder extends BlockLadder implements IResourceToolti
     return Material.IRON;
   }
 
-  @Override
+/*  @Override
   public void onEntityCollidedWithBlock(@Nonnull World world, @Nonnull BlockPos pos, @Nonnull IBlockState state, @Nonnull Entity entity) {
     if (entity.onGround || entity.isCollidedVertically) {
       return;
@@ -53,7 +53,7 @@ public class BlockDarkSteelLadder extends BlockLadder implements IResourceToolti
         entity.setPosition(entity.posX, entity.posY - Config.darkSteelLadderSpeedBoost, entity.posZ);
       }
     }
-  }
+  }*/ //todo: fix
 
   @Override
   public @Nonnull String getUnlocalizedNameForTooltip(@Nonnull ItemStack itemStack) {

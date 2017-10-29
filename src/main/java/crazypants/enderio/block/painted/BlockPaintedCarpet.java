@@ -210,13 +210,13 @@ public class BlockPaintedCarpet extends BlockCarpet implements ITileEntityProvid
     return 60;
   }
 
-  @Override
+/*  @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

@@ -102,7 +102,7 @@ public class BlockPaintedFence extends BlockFence implements ITileEntityProvider
     return modObject.apply(new BlockItemPaintedBlock(this));
   }
 
-  @Override
+/*  @Override
   public boolean canConnectTo(@Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
     if (super.canConnectTo(worldIn, pos)) {
       return true;
@@ -117,7 +117,7 @@ public class BlockPaintedFence extends BlockFence implements ITileEntityProvider
       return paintSource != null && paintSource.getBlock() instanceof BlockFence && paintSource.getMaterial() == blockMaterial;
     }
     return false;
-  }
+  }*/ //todo: fix
 
   @Override
   public TileEntity createNewTileEntity(@Nonnull World world, int metadata) {
@@ -278,13 +278,13 @@ public class BlockPaintedFence extends BlockFence implements ITileEntityProvider
     return super.shouldSideBeRendered(bs, worldIn, pos, side);
   }
 
-  @Override
+/*  @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     if (tab == EnderIOTab.tabNoTab) {
       super.getSubBlocks(itemIn, tab, list);
     }
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

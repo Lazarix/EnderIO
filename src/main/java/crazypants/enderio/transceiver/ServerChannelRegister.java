@@ -31,11 +31,11 @@ public class ServerChannelRegister extends ChannelRegister implements ICapabilit
 
   private long gen = 0;
 
-  @SubscribeEvent
+ /* @SubscribeEvent
   public static void onWorldCaps(AttachCapabilitiesEvent.World event) {
     event.addCapability(CAP_KEY, instance);
   }
-
+*/ //todo: fix
   @Override
   public boolean hasCapability(@Nonnull Capability<?> capability, @Nullable EnumFacing facing) {
     return capability == SERVER_REGISTER;

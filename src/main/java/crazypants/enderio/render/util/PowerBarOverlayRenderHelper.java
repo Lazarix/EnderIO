@@ -11,7 +11,7 @@ import crazypants.enderio.item.darksteel.upgrade.energy.EnergyUpgradeManager;
 import crazypants.enderio.power.PowerHandlerUtil;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.energy.IEnergyStorage;
@@ -127,7 +127,7 @@ public class PowerBarOverlayRenderHelper {
     GlStateManager.disableBlend();
     GlStateManager.shadeModel(GL11.GL_SMOOTH);
     Tessellator tessellator = Tessellator.getInstance();
-    VertexBuffer worldrenderer = tessellator.getBuffer();
+    BufferBuilder worldrenderer = tessellator.getBuffer();
     worldrenderer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
     this.drawPlain(worldrenderer, xPosition + 2, yPosition + 13 - offset, 13, shadow ? 2 : 1, colorShadow);
     this.drawGrad(worldrenderer, xPosition + 2, yPosition + 13 - offset, (BAR_W + width) / 2, 1, colorBarLeft, colorBarRight);
@@ -143,21 +143,21 @@ public class PowerBarOverlayRenderHelper {
     GlStateManager.enableDepth();
   }
 
-  protected void drawGrad(VertexBuffer renderer, int x, int y, double width, int height, Vector4i colorL, Vector4i colorR) {
+  protected void drawGrad(BufferBuilder renderer, int x, int y, double width, int height, Vector4i colorL, Vector4i colorR) {
     renderer.pos(x + 0, y + 0, 0.0D).color(colorL.x, colorL.y, colorL.z, colorL.w).endVertex();
     renderer.pos(x + 0, y + height, 0.0D).color(colorL.x, colorL.y, colorL.z, colorL.w).endVertex();
     renderer.pos(x + width, y + height, 0.0D).color(colorR.x, colorR.y, colorR.z, colorR.w).endVertex();
     renderer.pos(x + width, y + 0, 0.0D).color(colorR.x, colorR.y, colorR.z, colorR.w).endVertex();
   }
 
-  protected void drawPlain(VertexBuffer renderer, int x, int y, double width, int height, Vector4i color) {
+  protected void drawPlain(BufferBuilder renderer, int x, int y, double width, int height, Vector4i color) {
     renderer.pos(x + 0, y + 0, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
     renderer.pos(x + 0, y + height, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
     renderer.pos(x + width, y + height, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
     renderer.pos(x + width, y + 0, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
   }
 
-  protected void drawRight(VertexBuffer renderer, int x, int y, double width, int height, Vector4i color) {
+  protected void drawRight(BufferBuilder renderer, int x, int y, double width, int height, Vector4i color) {
     renderer.pos(x - width, y + 0, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
     renderer.pos(x - width, y + height, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
     renderer.pos(x, y + height, 0.0D).color(color.x, color.y, color.z, color.w).endVertex();
@@ -171,7 +171,7 @@ public class PowerBarOverlayRenderHelper {
     GlStateManager.disableAlpha();
     GlStateManager.disableBlend();
     Tessellator tessellator = Tessellator.getInstance();
-    VertexBuffer worldrenderer = tessellator.getBuffer();
+    BufferBuilder worldrenderer = tessellator.getBuffer();
     worldrenderer.begin(GL11.GL_QUADS, DefaultVertexFormats.POSITION_COLOR);
     overpaintVanillaRenderBug(worldrenderer, xPosition, yPosition);
     tessellator.draw();
@@ -181,7 +181,7 @@ public class PowerBarOverlayRenderHelper {
     GlStateManager.enableDepth();
   }
 
-  protected void overpaintVanillaRenderBug(VertexBuffer worldrenderer, int xPosition, int yPosition) {
+  protected void overpaintVanillaRenderBug(BufferBuilder worldrenderer, int xPosition, int yPosition) {
     this.drawPlain(worldrenderer, xPosition + 2 + 12, yPosition + 13, 1, 1, colorShadow);
   }
 

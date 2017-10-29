@@ -33,7 +33,7 @@ public class ItemBlockAlloy extends ItemBlock {
     return damage;
   }
     
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull final Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull final NonNullList<ItemStack> list) {
     NNList.of(Alloy.class).apply(new Callback<Alloy>() {

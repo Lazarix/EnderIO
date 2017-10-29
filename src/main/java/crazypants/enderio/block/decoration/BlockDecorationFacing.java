@@ -55,7 +55,7 @@ public class BlockDecorationFacing extends BlockDecoration {
     return super.getStateFromMeta(meta).withProperty(FACING, EnumFacing.SOUTH).withProperty(ACTIVE, false);
   }
 
-  @Override
+/*  @Override
   public @Nonnull IBlockState getActualState(@Nonnull IBlockState state, @Nonnull IBlockAccess worldIn, @Nonnull BlockPos pos) {
     if (worldIn instanceof PaintedBlockAccessWrapper) {
       TileEntity tileEntity = ((PaintedBlockAccessWrapper) worldIn).getRealTileEntity(pos);
@@ -65,7 +65,7 @@ public class BlockDecorationFacing extends BlockDecoration {
       }
     }
     return state.withProperty(FACING, EnumFacing.SOUTH).withProperty(ACTIVE, false);
-  }
+  }*/ //todo: fix
 
   @Override
   @SideOnly(Side.CLIENT)

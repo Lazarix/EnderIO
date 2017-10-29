@@ -53,7 +53,7 @@ public class BlockMachineBase extends Block {
     return getDefaultState();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
   }

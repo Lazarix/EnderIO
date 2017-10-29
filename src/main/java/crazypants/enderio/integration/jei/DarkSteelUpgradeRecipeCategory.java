@@ -62,22 +62,22 @@ public class DarkSteelUpgradeRecipeCategory extends BlankRecipeCategory<DarkStee
 
   } // -------------------------------------
 
-  private static final List<UpgradePath> allRecipes = DarkSteelRecipeManager.getAllRecipes(ItemHelper.getValidItems());
+  //private static final List<UpgradePath> allRecipes = DarkSteelRecipeManager.getAllRecipes(ItemHelper.getValidItems());
 
   public static void registerSubtypes(ISubtypeRegistry subtypeRegistry) {
     DarkSteelUpgradeSubtypeInterpreter dsusi = new DarkSteelUpgradeSubtypeInterpreter();
     Set<Item> items = new HashSet<Item>();
-    for (UpgradePath rec : allRecipes) {
+    /*for (UpgradePath rec : allRecipes) {
       items.add(rec.getInput().getItem());
       items.add(rec.getOutput().getItem());
-    }
+    }*/ //todo: fix
     for (Item item : items) {
       if (item != null) {
         subtypeRegistry.registerSubtypeInterpreter(item, dsusi);
       }
     }
 
-    Log.info(String.format("DarkSteelUpgradeRecipeCategory: Added %d dark steel upgrade subtypes to JEI.", allRecipes.size()));
+    //Log.info(String.format("DarkSteelUpgradeRecipeCategory: Added %d dark steel upgrade subtypes to JEI.", allRecipes.size()));
   }
 
   public static void register(IModRegistry registry, IGuiHelper guiHelper) {
@@ -87,14 +87,14 @@ public class DarkSteelUpgradeRecipeCategory extends BlankRecipeCategory<DarkStee
     registry.addRecipeCategoryCraftingItem(new ItemStack(blockDarkSteelAnvil.getBlockNN()), DarkSteelUpgradeRecipeCategory.UID);
 
     List<DarkSteelUpgradeRecipeWrapper> result = new ArrayList<DarkSteelUpgradeRecipeWrapper>();
-    for (UpgradePath rec : allRecipes) {
+    /*for (UpgradePath rec : allRecipes) {
       result.add(new DarkSteelUpgradeRecipeWrapper(rec));
-    }
+    }*/ //todo: fix
     registry.addRecipes(result, DarkSteelUpgradeRecipeCategory.UID);
 
     registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerRepair.class, DarkSteelUpgradeRecipeCategory.UID, 0, 2, 3, 4 * 9);
 
-    Log.info(String.format("DarkSteelUpgradeRecipeCategory: Added %d dark steel upgrade recipes to JEI.", allRecipes.size()));
+    //Log.info(String.format("DarkSteelUpgradeRecipeCategory: Added %d dark steel upgrade recipes to JEI.", allRecipes.size()));
   }
 
   // ------------ Category
@@ -124,6 +124,11 @@ public class DarkSteelUpgradeRecipeCategory extends BlankRecipeCategory<DarkStee
   }
 
   @Override
+  public String getModName() {
+    return null;
+  }
+
+  @Override
   public @Nonnull IDrawable getBackground() {
     return background;
   }
@@ -141,6 +146,11 @@ public class DarkSteelUpgradeRecipeCategory extends BlankRecipeCategory<DarkStee
   }
 
   public static class DarkSteelUpgradeSubtypeInterpreter implements ISubtypeInterpreter {
+
+    @Override
+    public String apply(ItemStack itemStack) {
+      return null;
+    }
 
     @Override
     @Nullable

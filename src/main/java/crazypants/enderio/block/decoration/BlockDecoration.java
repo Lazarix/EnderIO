@@ -66,7 +66,7 @@ public class BlockDecoration extends Block implements IHaveRenderers, IModObject
     });
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item itemIn, @Nonnull CreativeTabs tab, @Nonnull NonNullList<ItemStack> list) {
     NNIterator<EnumDecoBlock> iterator = NNList.of(EnumDecoBlock.class).iterator();

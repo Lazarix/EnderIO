@@ -210,7 +210,7 @@ public enum Fluids {
     }
   }
 
-  @SubscribeEvent(priority = EventPriority.NORMAL)
+ /* @SubscribeEvent(priority = EventPriority.NORMAL)
   public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
     for (Fluids fluid : values()) {
       if (fluid.hasBlock) {
@@ -219,7 +219,7 @@ public enum Fluids {
         fluid.getFluid().setBlock(block);
       }
     }
-  }
+  }*/ //todo: fix
 
   @SubscribeEvent
   public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {

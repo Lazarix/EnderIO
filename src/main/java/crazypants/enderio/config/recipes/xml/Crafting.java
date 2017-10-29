@@ -7,7 +7,7 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.StartElement;
 
 import crazypants.enderio.Log;
-import crazypants.enderio.config.recipes.GenericUpgradeRecipe;
+//import crazypants.enderio.config.recipes.GenericUpgradeRecipe;
 import crazypants.enderio.config.recipes.GenericUpgradeRecipeShapeless;
 import crazypants.enderio.config.recipes.InvalidRecipeConfigException;
 import crazypants.enderio.config.recipes.StaxFactory;
@@ -53,7 +53,7 @@ public class Crafting extends AbstractCrafting {
     }
   }
 
-  @Override
+/*  @Override
   public void register() {
     if (valid && active) {
       if (grid != null) {
@@ -76,7 +76,7 @@ public class Crafting extends AbstractCrafting {
     } else {
       Log.debug("Skipping Crafting '" + (getOutput() == null ? "null" : getOutput().getItemStack()) + "' (valid=" + valid + ", active=" + active + ")");
     }
-  }
+  }*/ //todo: fix
 
   @Override
   public boolean setAttribute(StaxFactory factory, String name, String value) throws InvalidRecipeConfigException, XMLStreamException {
@@ -106,4 +106,8 @@ public class Crafting extends AbstractCrafting {
     return super.setElement(factory, name, startElement);
   }
 
+  @Override
+  public void register() {
+    
+  }
 }

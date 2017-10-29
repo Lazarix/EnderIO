@@ -1,7 +1,9 @@
 package crazypants.enderio.material.material;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
+import net.minecraft.util.ResourceLocation;
 import org.apache.commons.lang3.ArrayUtils;
 
 import com.enderio.core.api.common.util.ITankAccess;
@@ -66,6 +68,11 @@ public class NutritiousStickRecipe implements IRecipe {
   }
 
   @Override
+  public boolean canFit(int width, int height) {
+    return false;
+  }
+
+  //@Override
   public int getRecipeSize() {
     return 2;
   }
@@ -90,6 +97,22 @@ public class NutritiousStickRecipe implements IRecipe {
       return fill.result.itemStack;
     }
     return Prep.getEmpty();
+  }
+
+  @Override
+  public IRecipe setRegistryName(ResourceLocation name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public ResourceLocation getRegistryName() {
+    return null;
+  }
+
+  @Override
+  public Class<IRecipe> getRegistryType() {
+    return null;
   }
 
   private static class NutDistTank implements ITankAccess {

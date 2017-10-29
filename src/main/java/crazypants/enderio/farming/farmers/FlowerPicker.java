@@ -20,9 +20,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IShearable;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry.Impl;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class FlowerPicker extends Impl<IFarmerJoe> implements IFarmerJoe {
+public class FlowerPicker extends IForgeRegistryEntry.Impl<IFarmerJoe> implements IFarmerJoe {
 
   protected Things flowers = new Things();
 

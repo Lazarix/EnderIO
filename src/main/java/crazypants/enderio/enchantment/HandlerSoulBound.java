@@ -52,7 +52,7 @@ public class HandlerSoulBound {
     Log.debug("Running onPlayerDeathEarly logic for " + evt.getEntityPlayer().getName());
 
     ListIterator<EntityItem> iter = evt.getDrops().listIterator();
-    while (iter.hasNext()) {
+    /*while (iter.hasNext()) {
       EntityItem ei = iter.next();
       ItemStack item = ei.getEntityItem();
       if(isSoulBound(item)) {
@@ -60,7 +60,7 @@ public class HandlerSoulBound {
           iter.remove();
         }
       }
-    }
+    }*/ //todo: fix
 
     // Note: Baubles will also add its items to evt.drops, but later. We cannot
     // wait for that because gravestone mods also listen to this event. So we have
@@ -112,7 +112,7 @@ public class HandlerSoulBound {
     Log.debug("Running onPlayerDeathLate logic for " + evt.getEntityPlayer().getName());
 
     ListIterator<EntityItem> iter = evt.getDrops().listIterator();
-    while (iter.hasNext()) {
+    /*while (iter.hasNext()) {
       EntityItem ei = iter.next();
       ItemStack item = ei.getEntityItem();
       if (isSoulBound(item)) {
@@ -120,7 +120,7 @@ public class HandlerSoulBound {
           iter.remove();
         }
       }
-    }
+    }*/ //todo: fix
 
   }
 

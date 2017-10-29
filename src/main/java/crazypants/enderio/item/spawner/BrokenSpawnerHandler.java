@@ -41,7 +41,7 @@ public class BrokenSpawnerHandler {
     }
 
     try {
-      getEntityIdMethod = ReflectionHelper.findMethod(MobSpawnerBaseLogic.class, null, new String[] { "getEntityId", "func_190895_g" }, new Class<?>[0]);
+      //getEntityIdMethod = ReflectionHelper.findMethod(MobSpawnerBaseLogic.class, null, new String[] { "getEntityId", "func_190895_g" }, new Class<?>[0]);
     } catch (Exception e) {
       Log.error("Broken Spawner: Could not find method: getEntityId/func_190895_g");
     }

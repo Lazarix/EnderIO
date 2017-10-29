@@ -30,9 +30,9 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.IShearable;
 import net.minecraftforge.event.ForgeEventFactory;
-import net.minecraftforge.fml.common.registry.IForgeRegistryEntry.Impl;
+import net.minecraftforge.registries.IForgeRegistryEntry;
 
-public class TreeFarmer extends Impl<IFarmerJoe> implements IFarmerJoe {
+public class TreeFarmer extends IForgeRegistryEntry.Impl<IFarmerJoe> implements IFarmerJoe {
 
   private static final @Nonnull HeightComparator comp = new HeightComparator();
 
@@ -236,7 +236,7 @@ public class TreeFarmer extends Impl<IFarmerJoe> implements IFarmerJoe {
     if (!world.isAirBlock(bc)) {
       return;
     }
-    ItemStack allowedSeed = Prep.getEmpty();
+    /*ItemStack allowedSeed = Prep.getEmpty();
     if (farm.isSlotLocked(bc)) {
       ItemStack seedTypeInSuppliesFor = farm.getSeedTypeInSuppliesFor(bc);
       if (Prep.isValid(seedTypeInSuppliesFor)) {
@@ -250,7 +250,7 @@ public class TreeFarmer extends Impl<IFarmerJoe> implements IFarmerJoe {
           return;
         }
       }
-    }
+    }*/ //todo: fix
   }
 
   public boolean getIgnoreMeta() {

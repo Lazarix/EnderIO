@@ -13,7 +13,7 @@ public class ConfigFactoryEIO implements IModGuiFactory {
     ;
   }
 
-  @Override
+  //@Override
   public Class<? extends GuiScreen> mainConfigGuiClass() {
     return GuiConfigFactoryEIO.class;
   }

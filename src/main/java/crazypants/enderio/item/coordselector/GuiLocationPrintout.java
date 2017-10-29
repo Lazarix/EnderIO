@@ -64,7 +64,7 @@ public class GuiLocationPrintout extends GuiScreenBase {
     okB = new TooltipButton(this, 0, xSize - 30, ySize - 30, 20, 20, "Ok");
   }
 
-  @Override
+ /* @Override
   public void initGui() {
     super.initGui();
 
@@ -75,7 +75,7 @@ public class GuiLocationPrintout extends GuiScreenBase {
 
     okB.onGuiInit();
 
-  }
+  }*/ //todo: fix
 
   @Override
   public void updateScreen() {
@@ -156,6 +156,12 @@ public class GuiLocationPrintout extends GuiScreenBase {
 
   @Override
   public void clearToolTips() {
+  }
+
+  @Nonnull
+  @Override
+  public <T extends GuiButton> T addButton(@Nonnull T button) {
+    return null;
   }
 
   @Override

@@ -205,12 +205,12 @@ public class ItemColdFireIgniter extends Item implements IAdvancedTooltipProvide
     }
   }
 
-  @Override
+/*  @Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack itemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> list, boolean par4) {
     super.addInformation(itemStack, par2EntityPlayer, list, par4);
     list.add(Fluids.MB(FLUIDAMOUNT.getInt(itemStack, 0), FLUID_CAPACITY, getFluidType(itemStack)));
-  }
+  }*/ //todo: fix
 
   @Override
   public void addCommonEntries(@Nonnull ItemStack itemstack, @Nullable EntityPlayer entityplayer, @Nonnull List<String> list, boolean flag) {
@@ -232,7 +232,7 @@ public class ItemColdFireIgniter extends Item implements IAdvancedTooltipProvide
     PowerBarOverlayRenderHelper.instance_fluid.render(stack, xPosition, yPosition, 0);
   }
 
-  @Override
+  //@Override
   public void getSubItems(@Nonnull Item itemIn, @Nullable CreativeTabs tab, @Nonnull NonNullList<ItemStack> subItems) {
     final ItemStack stack = new ItemStack(itemIn);
     subItems.add(stack.copy());

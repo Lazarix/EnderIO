@@ -12,7 +12,7 @@ import net.minecraft.client.particle.Particle;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
@@ -38,7 +38,7 @@ public class SoundParticle extends Particle {
   }
 
   @Override
-  public void renderParticle(@Nonnull VertexBuffer worldRendererIn, @Nonnull Entity player, float partialTicks, float rotX, float rotZ, float rotYZ,
+  public void renderParticle(@Nonnull BufferBuilder worldRendererIn, @Nonnull Entity player, float partialTicks, float rotX, float rotZ, float rotYZ,
       float rotXY, float rotXZ) {
 
     final IconEIO icon = IconEIO.SOUND;

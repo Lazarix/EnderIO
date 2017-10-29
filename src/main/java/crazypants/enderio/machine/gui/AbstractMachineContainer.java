@@ -128,7 +128,7 @@ public abstract class AbstractMachineContainer<E extends AbstractInventoryMachin
 
   private boolean hasAlreadyJustSuccessfullyTransferedAStack = false;
 
-  @Override
+  //@Override //todo: fix
   protected void retrySlotClick(int slotId, int clickedButton, boolean mode, @Nonnull EntityPlayer playerIn) {
     if (!hasAlreadyJustSuccessfullyTransferedAStack) {
       this.slotClick(slotId, clickedButton, ClickType.QUICK_MOVE, playerIn);

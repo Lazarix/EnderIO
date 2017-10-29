@@ -28,13 +28,12 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import net.minecraftforge.client.model.IPerspectiveAwareModel;
 
-public class FacadeSmartItemModel implements IPerspectiveAwareModel {
+public class FacadeSmartItemModel implements IBakedModel {
 
-  private final IPerspectiveAwareModel parent;
+  private final IBakedModel parent;
 
-  public FacadeSmartItemModel(IPerspectiveAwareModel parent) {
+  public FacadeSmartItemModel(IBakedModel parent) {
     this.parent = parent;
   }
 

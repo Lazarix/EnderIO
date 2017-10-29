@@ -125,7 +125,7 @@ public class BlockFusedQuartz extends BlockFusedQuartzBase<TileEntityEio> implem
     return state.getValue(BlockColored.COLOR).getMetadata();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item par1, @Nonnull CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     for (EnumDyeColor enumdyecolor : EnumDyeColor.values()) {
@@ -164,10 +164,10 @@ public class BlockFusedQuartz extends BlockFusedQuartzBase<TileEntityEio> implem
     return true;
   }
 
-  @Override
+/*  @Override
   public int getBlockTint(@Nonnull IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) {
     return state.getValue(BlockColored.COLOR).getMapColor().colorValue;
-  }
+  }*/ //todo: fix
 
   @Override
   @Nullable
@@ -180,17 +180,22 @@ public class BlockFusedQuartz extends BlockFusedQuartzBase<TileEntityEio> implem
     return modObject.apply(new BlockItemFusedQuartz(this));
   }
 
+  @Override
+  public int getBlockTint(@Nonnull IBlockState state, @Nullable IBlockAccess worldIn, @Nullable BlockPos pos, int tintIndex) {
+    return 0;
+  }
+
   public static class BlockItemFusedQuartz extends BlockFusedQuartzBase.BlockItemFusedQuartzBase implements ITintedItem, IWithPaintName {
 
     public BlockItemFusedQuartz(@Nonnull BlockFusedQuartz block) {
       super(block);
     }
 
-    @Override
+ /*   @Override
     public int getItemTint(@Nonnull ItemStack stack, int tintIndex) {
       return EnumDyeColor.byMetadata(stack.getMetadata()).getMapColor().colorValue;
-    }
-
+    } //todo: fix
+*/
     @Override
     @SideOnly(Side.CLIENT)
     protected FusedQuartzType determineQuartzType(ItemStack par1ItemStack) {
@@ -202,6 +207,10 @@ public class BlockFusedQuartz extends BlockFusedQuartzBase<TileEntityEio> implem
       return EnderIO.lang.localize("color." + EnumDyeColor.byMetadata(stack.getMetadata()).getUnlocalizedName());
     }
 
+    @Override
+    public int getItemTint(@Nonnull ItemStack stack, int tintIndex) {
+      return 0;
+    }
   }
 
 }

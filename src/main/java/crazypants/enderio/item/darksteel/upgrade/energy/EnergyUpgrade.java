@@ -10,6 +10,7 @@ import com.enderio.core.client.handlers.SpecialTooltipHandler;
 
 import crazypants.enderio.EnderIO;
 import crazypants.enderio.config.Config;
+import crazypants.enderio.config.recipes.xml.Item;
 import crazypants.enderio.handler.darksteel.AbstractUpgrade;
 import crazypants.enderio.handler.darksteel.IDarkSteelItem;
 import crazypants.enderio.item.travelstaff.ItemTravelStaff;
@@ -57,14 +58,14 @@ public class EnergyUpgrade extends AbstractUpgrade {
     maxOutRF = maxReceiveIO;
   }
 
-  public EnergyUpgrade(@Nonnull NBTTagCompound tag) {
+/*  public EnergyUpgrade(@Nonnull Item tag) {
     super(EnergyUpgradeManager.UPGRADE_NAME, tag);
     level = tag.getInteger(EnergyUpgradeManager.KEY_LEVEL);
     capacity = tag.getInteger(EnergyUpgradeManager.KEY_CAPACITY);
     energy = tag.getInteger(EnergyUpgradeManager.KEY_ENERGY);
     maxInRF = tag.getInteger(EnergyUpgradeManager.KEY_MAX_IN);
     maxOutRF = tag.getInteger(EnergyUpgradeManager.KEY_MAX_OUT);
-  }
+  }*/ //todo: fix
 
   EnergyUpgrade copy() {
     return new EnergyUpgrade(level, unlocName, levelCost, upgradeItem, maxInRF, maxOutRF);

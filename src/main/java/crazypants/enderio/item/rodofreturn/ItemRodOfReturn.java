@@ -230,17 +230,17 @@ public class ItemRodOfReturn extends AbstractPoweredItem implements IAdvancedToo
     return Config.rodOfReturnTicksToActivate;
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void addInformation(@Nonnull ItemStack itemStack, @Nonnull EntityPlayer par2EntityPlayer, @Nonnull List<String> list, boolean par4) {
-    super.addInformation(itemStack, par2EntityPlayer, list, par4);
+    //super.addInformation(itemStack, par2EntityPlayer, list, par4); //todo: fix
     list.add(Lang.RETURN_ROD_FLUID.get(PowerDisplayUtil.formatPower(FLUIDAMOUNT.getInt(itemStack, 0)),
         PowerDisplayUtil.formatPower(Config.rodOfReturnFluidStorage)));
     list.add(Lang.RETURN_ROD_POWER.get(PowerDisplayUtil.formatPower(getEnergyStored(itemStack)), PowerDisplayUtil.formatPower(Config.rodOfReturnPowerStorage),
         PowerDisplayUtil.abrevation()));
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     ItemStack is = new ItemStack(this);

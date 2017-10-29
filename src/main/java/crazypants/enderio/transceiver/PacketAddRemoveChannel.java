@@ -44,7 +44,7 @@ public class PacketAddRemoveChannel implements IMessage {
     public IMessage onMessage(PacketAddRemoveChannel message, MessageContext ctx) {
       if (ctx.side == Side.SERVER) {
         if (!message.channel.getUser().equals(ctx.getServerHandler().player.getGameProfile())) {
-          ctx.getServerHandler().player.connection.disconnect("Don't mess with other player's channels, you cheat.");
+          //ctx.getServerHandler().player.connection.disconnect("Don't mess with other player's channels, you cheat."); //todo: fix
           return null;
         }
         if (message.isAdd) {

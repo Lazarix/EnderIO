@@ -41,7 +41,7 @@ public class MachineRenderMapper implements IRenderMapper.IBlockRenderMapper, IR
     this.body = body;
   }
 
-  @Override
+  /*@Override
   @SideOnly(Side.CLIENT)
   public List<IBlockState> mapBlockRender(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, BlockRenderLayer blockLayer,
       @Nonnull QuadCollector quadCollector) {
@@ -63,7 +63,7 @@ public class MachineRenderMapper implements IRenderMapper.IBlockRenderMapper, IR
       }
     }
     return state.getTileEntity();
-  }
+  }*/ //todo: fix
 
   @SideOnly(Side.CLIENT)
   protected @Nullable List<IBlockState> render(IBlockState state, IBlockAccess world, BlockPos pos, BlockRenderLayer blockLayer,
@@ -115,6 +115,12 @@ public class MachineRenderMapper implements IRenderMapper.IBlockRenderMapper, IR
     }
     states.add(Pair.of(block.getStateFromMeta(stack.getMetadata()).withProperty(EnumRenderMode.RENDER, EnumRenderMode.FRONT), stack));
     return states;
+  }
+
+  @Nullable
+  @Override
+  public List<IBlockState> mapBlockRender(@Nonnull IBlockStateWrapper state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos, BlockRenderLayer blockLayer, @Nonnull QuadCollector quadCollector) {
+    return null;
   }
 
   @Override

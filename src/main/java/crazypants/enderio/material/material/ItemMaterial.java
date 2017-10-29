@@ -48,7 +48,7 @@ public class ItemMaterial extends Item implements IHaveRenderers {
     return getUnlocalizedName() + "." + Material.getTypeFromMeta(stack.getItemDamage()).getBaseName();
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull final Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull final NonNullList<ItemStack> list) {
     Material.getActiveMaterials().apply(new Callback<Material>() {

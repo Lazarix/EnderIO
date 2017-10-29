@@ -108,7 +108,7 @@ public class ItemDarkSteelSword extends ItemSword implements IAdvancedTooltipPro
     modObject.apply(this);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     ItemStack is = new ItemStack(this);
@@ -143,7 +143,7 @@ public class ItemDarkSteelSword extends ItemSword implements IAdvancedTooltipPro
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public void onEntityDrop(LivingDropsEvent evt) {
 
-    final Entity entity = evt.getSource().getEntity();
+    final Entity entity = evt.getSource().getTrueSource();
     final EntityLivingBase entityLiving = evt.getEntityLiving();
     if (!(entity instanceof EntityPlayer) || entityLiving == null) {
       return;
@@ -189,11 +189,11 @@ public class ItemDarkSteelSword extends ItemSword implements IAdvancedTooltipPro
         }
 
         int existing = 0;
-        for (EntityItem stack : evt.getDrops()) {
+        /*for (EntityItem stack : evt.getDrops()) {
           if (stack.getEntityItem().getItem() == Items.ENDER_PEARL) {
             existing += stack.getEntityItem().getCount();
           }
-        }
+        }*/ //todo: fix
         int toDrop = numPearls - existing;
         if (toDrop > 0) {
           evt.getDrops()
@@ -276,9 +276,9 @@ public class ItemDarkSteelSword extends ItemSword implements IAdvancedTooltipPro
 
   private boolean containsDrop(LivingDropsEvent evt, @Nonnull ItemStack skull) {
     for (EntityItem ei : evt.getDrops()) {
-      if (ei != null && ei.getEntityItem().getItem() == skull.getItem() && ei.getEntityItem().getItemDamage() == skull.getItemDamage()) {
+      /*if (ei != null && ei.getEntityItem().getItem() == skull.getItem() && ei.getEntityItem().getItemDamage() == skull.getItemDamage()) {
         return true;
-      }
+      }*/ //todo: fix
     }
     return false;
   }

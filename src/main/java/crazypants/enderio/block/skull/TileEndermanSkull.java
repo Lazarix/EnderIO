@@ -22,4 +22,8 @@ public class TileEndermanSkull extends TileEntityEio {
     return yaw;
   }
 
+  @Override
+  public void update() {
+
+  }
 }

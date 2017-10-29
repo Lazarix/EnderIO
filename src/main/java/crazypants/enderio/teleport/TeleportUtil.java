@@ -55,7 +55,7 @@ public class TeleportUtil {
     int z = pos.getZ();
 
     int from = entity.dimension;
-    if (from != targetDim) {
+    /*if (from != targetDim) {
       MinecraftServer server = FMLCommonHandler.instance().getMinecraftServerInstance();
       WorldServer fromDim = server.worldServerForDimension(from);
       WorldServer toDim = server.worldServerForDimension(targetDim);
@@ -90,7 +90,7 @@ public class TeleportUtil {
           return false;
         }
       }
-    }
+    }*/ //todo: fix
 
     // Force the chunk to load
     if (!entity.world.isBlockLoaded(pos)) {

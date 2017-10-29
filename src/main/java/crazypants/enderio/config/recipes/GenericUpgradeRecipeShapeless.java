@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.oredict.RecipeSorter;
 import net.minecraftforge.oredict.RecipeSorter.Category;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
@@ -17,6 +18,11 @@ public class GenericUpgradeRecipeShapeless extends ShapelessOreRecipe {
     RecipeSorter.register("EnderIO:GenericUpgradeRecipeShapeless", GenericUpgradeRecipeShapeless.class, Category.SHAPED, "after:minecraft:shapeless");
   }
 
+  public GenericUpgradeRecipeShapeless(ResourceLocation group, Block result, Object... recipe) {
+    super(group, result, recipe);
+  }
+
+/*
   public GenericUpgradeRecipeShapeless(Block result, Object... recipe) {
     super(result, recipe);
   }
@@ -28,6 +34,7 @@ public class GenericUpgradeRecipeShapeless extends ShapelessOreRecipe {
   public GenericUpgradeRecipeShapeless(@Nonnull ItemStack result, Object... recipe) {
     super(result, recipe);
   }
+*/ //todo: fix
 
   @SuppressWarnings("null")
   @Override

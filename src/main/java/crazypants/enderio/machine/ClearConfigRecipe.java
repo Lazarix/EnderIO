@@ -1,6 +1,7 @@
 package crazypants.enderio.machine;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import com.enderio.core.common.util.NNList;
 
@@ -16,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
@@ -82,6 +84,11 @@ public class ClearConfigRecipe implements IRecipe {
   }
 
   @Override
+  public boolean canFit(int width, int height) {
+    return false;
+  }
+
+  //@Override
   public int getRecipeSize() {
     return 1;
   }
@@ -108,4 +115,19 @@ public class ClearConfigRecipe implements IRecipe {
     return NNList.withSize(inv.getSizeInventory(), Prep.getEmpty());
   }
 
+  @Override
+  public IRecipe setRegistryName(ResourceLocation name) {
+    return null;
+  }
+
+  @Nullable
+  @Override
+  public ResourceLocation getRegistryName() {
+    return null;
+  }
+
+  @Override
+  public Class<IRecipe> getRegistryType() {
+    return null;
+  }
 }

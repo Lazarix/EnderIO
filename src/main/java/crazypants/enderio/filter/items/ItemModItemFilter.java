@@ -39,10 +39,10 @@ public class ItemModItemFilter extends Item implements IItemFilterUpgrade, IReso
         setMaxStackSize(64);
         }
 
-    protected void init()
+    /*protected void init()
         {
         GameRegistry.register(this);
-        }
+        }*/ //todo: fix
 
     @Override
     public IItemFilter createFilterFromStack(ItemStack stack)
@@ -67,7 +67,7 @@ public class ItemModItemFilter extends Item implements IItemFilterUpgrade, IReso
         return getUnlocalizedName();
         }
 
-    @Override
+    //@Override
     @SideOnly(Side.CLIENT)
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List<String> par3List, boolean par4)
         {

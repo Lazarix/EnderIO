@@ -92,7 +92,7 @@ public class ItemDarkSteelAxe extends ItemAxe implements IAdvancedTooltipProvide
     return OreDictionaryHelper.hasName(right, Alloy.DARK_STEEL.getOreIngot());
   }
 
-  @Override
+ // @Override
   @SideOnly(Side.CLIENT)
   public void getSubItems(@Nonnull Item item, @Nullable CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     @Nonnull
@@ -204,7 +204,7 @@ public class ItemDarkSteelAxe extends ItemAxe implements IAdvancedTooltipProvide
     }
   }
 
-  @Override
+  /*@Override
   public float getStrVsBlock(@Nonnull ItemStack stack, @Nonnull IBlockState state) {
     if (ItemDarkSteelPickaxe.isToolEffective(state, stack)) {
       if (Config.darkSteelAxePowerUsePerDamagePoint <= 0 ? EnergyUpgradeManager.itemHasAnyPowerUpgrade(stack)
@@ -214,7 +214,7 @@ public class ItemDarkSteelAxe extends ItemAxe implements IAdvancedTooltipProvide
       return toolMaterial.getEfficiencyOnProperMaterial();
     }
     return super.getStrVsBlock(stack, state);
-  }
+  }*/ //todo: fix
 
   private boolean isLog(IBlockState bs) {
     if (logOreId == -1) {

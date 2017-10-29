@@ -25,15 +25,14 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
-import net.minecraftforge.client.model.IPerspectiveAwareModel;
 import net.minecraftforge.common.model.TRSRTransformation;
 
-public class RotatingSmartItemModel implements IPerspectiveAwareModel {
+public class RotatingSmartItemModel implements IBakedModel {
 
-  private final @Nonnull IPerspectiveAwareModel parent;
+  private final @Nonnull IBakedModel parent;
   private final int speed;
 
-  public RotatingSmartItemModel(@Nonnull IPerspectiveAwareModel parent, int speed) {
+  public RotatingSmartItemModel(@Nonnull IBakedModel parent, int speed) {
     this.parent = parent;
     this.speed = speed;
   }
@@ -94,8 +93,8 @@ public class RotatingSmartItemModel implements IPerspectiveAwareModel {
       }
 
       IBakedModel newBase = parent.getOverrides().handleItemState(parent, stack, world, entity);
-      if (parent != newBase && newBase instanceof IPerspectiveAwareModel) {
-        return new RotatingSmartItemModel((IPerspectiveAwareModel) newBase, speed);
+      if (parent != newBase && newBase instanceof IBakedModel) {
+        return new RotatingSmartItemModel((IBakedModel) newBase, speed);
       }
       return RotatingSmartItemModel.this;
     }

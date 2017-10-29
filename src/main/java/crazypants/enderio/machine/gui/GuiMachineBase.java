@@ -76,7 +76,7 @@ public abstract class GuiMachineBase<T extends AbstractInventoryMachineEntity> e
     super.initGui();
     redstoneButton.onGuiInit();
     configB.onGuiInit();
-    recipeButton.onGuiInit();
+    //recipeButton.onGuiInit(); //todo: fix
   }
 
   protected boolean showRecipeButton() {
@@ -88,7 +88,7 @@ public abstract class GuiMachineBase<T extends AbstractInventoryMachineEntity> e
     GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
     for (int i = 0; i < buttonList.size(); ++i) {
       GuiButton guibutton = buttonList.get(i);
-      guibutton.drawButton(mc, 0, 0);
+      //guibutton.drawButton(mc, 0, 0); //todo: fix
     }
 
     if (showRecipeButton()) {

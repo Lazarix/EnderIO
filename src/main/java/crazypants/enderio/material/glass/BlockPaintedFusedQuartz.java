@@ -104,7 +104,7 @@ public class BlockPaintedFusedQuartz extends BlockFusedQuartzBase<TileEntityPain
     };
   }
 
-  @Override
+ // @Override
   @SideOnly(Side.CLIENT)
   public void getSubBlocks(@Nonnull Item par1, @Nonnull CreativeTabs par2CreativeTabs, @Nonnull NonNullList<ItemStack> par3List) {
     if (par2CreativeTabs == EnderIOTab.tabNoTab) {

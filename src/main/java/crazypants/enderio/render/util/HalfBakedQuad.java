@@ -21,7 +21,7 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.GlStateManager.CullFace;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.VertexBuffer;
+import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -103,7 +103,7 @@ public class HalfBakedQuad {
     });
   }
 
-  public void render(@Nonnull VertexBuffer tes) {
+  public void render(@Nonnull BufferBuilder tes) {
     for (Vertex v : corners) {
       tes.pos(v.x(), v.y(), v.z()).tex(tex.getInterpolatedU(v.u() * 16), tex.getInterpolatedV(v.v() * 16)).color(color.x, color.y, color.z, color.w)
           .normal(v.nx(), v.ny(), v.nz()).endVertex();
@@ -179,7 +179,7 @@ public class HalfBakedQuad {
       }
     }
 
-    public void render(@Nonnull VertexBuffer tes) {
+    public void render(@Nonnull BufferBuilder tes) {
       for (HalfBakedQuad halfBakedQuad : store) {
         halfBakedQuad.render(tes);
       }
@@ -191,7 +191,7 @@ public class HalfBakedQuad {
     public void render() {
       RenderUtil.bindBlockTexture();
       RenderHelper.disableStandardItemLighting();
-      VertexBuffer tes = Tessellator.getInstance().getBuffer();
+      BufferBuilder tes = Tessellator.getInstance().getBuffer();
       for (int i = 0; i <= 1; i++) {
         if (i == 0) {
           GlStateManager.cullFace(CullFace.FRONT);

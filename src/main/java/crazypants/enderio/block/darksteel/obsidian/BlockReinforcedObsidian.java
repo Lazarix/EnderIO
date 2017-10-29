@@ -45,7 +45,7 @@ public class BlockReinforcedObsidian extends BlockEio<TileEntityEio> implements 
     setCreativeTab(EnderIOTab.tabEnderIO);
   }
 
-  @Override
+  //@Override
   @SideOnly(Side.CLIENT)
   public @Nonnull MapColor getMapColor(@Nonnull IBlockState state) {
     return MapColor.OBSIDIAN;
